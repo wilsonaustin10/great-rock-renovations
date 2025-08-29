@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Great Rock Renovations
 
-## Getting Started
+A professional construction and renovation services website built with Next.js 15, TypeScript, and Tailwind CSS, mirroring the design of builditatx.com.
 
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the website.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Modern Design**: Clean, professional layout mirroring builditatx.com
+- **Responsive**: Mobile-first design that works on all devices
+- **SEO Optimized**: Meta tags, Open Graph, and structured data
+- **Performance**: Optimized images, lazy loading, and fast page loads
+- **Interactive Components**:
+  - Sticky navigation with mobile menu
+  - Portfolio gallery with lightbox
+  - Testimonials carousel
+  - Contact form with validation
+  - Smooth scroll animations
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+great-rock-renovations/
+├── app/
+│   ├── layout.tsx      # Root layout with Header/Footer
+│   ├── page.tsx        # Home page
+│   └── globals.css     # Global styles
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx  # Navigation header
+│   │   └── Footer.tsx  # Site footer
+│   └── sections/
+│       ├── Hero.tsx         # Hero/landing section
+│       ├── Services.tsx     # Services grid
+│       ├── About.tsx        # About/trust section
+│       ├── Portfolio.tsx    # Project gallery
+│       ├── Testimonials.tsx # Customer reviews
+│       └── Contact.tsx      # Contact form & info
+└── public/
+    └── images/         # Image assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Company Information
+Update company details in:
+- `components/layout/Header.tsx` - Phone number and navigation
+- `components/layout/Footer.tsx` - Contact info and social links
+- `components/sections/Contact.tsx` - Contact details and map
+- `app/layout.tsx` - SEO metadata
 
-## Deploy on Vercel
+### Colors
+Edit the color scheme in `tailwind.config.ts`:
+- Primary colors (blue by default)
+- Gray scale
+- Custom animations
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Services
+Modify services in `components/sections/Services.tsx`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Portfolio
+Update project examples in `components/sections/Portfolio.tsx`
+
+### Testimonials
+Edit customer reviews in `components/sections/Testimonials.tsx`
+
+## 🛠️ Technologies
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Font**: Inter (Google Fonts)
+
+## 📱 Responsive Breakpoints
+
+- Mobile: 320px - 767px
+- Tablet: 768px - 1023px
+- Desktop: 1024px+
+
+## 🚀 Deployment
+
+This project is ready to deploy on Vercel:
+
+```bash
+npm run build
+```
+
+Or deploy directly to Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## 📄 License
+
+© 2024 Great Rock Renovations. All rights reserved.
