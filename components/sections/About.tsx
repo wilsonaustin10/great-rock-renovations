@@ -1,4 +1,4 @@
-import { CheckCircle, Users, Award, ShieldCheck, Heart, Hammer, Home } from 'lucide-react';
+import { Users, Heart, Hammer, Home } from 'lucide-react';
 import Image from 'next/image';
 
 const About = () => {
@@ -57,7 +57,7 @@ const About = () => {
                 years of renovating residential and commercial properties, we understand that every project 
                 is deeply personal. Homes and businesses are places where people build their lives, create 
                 memories, and establish legacies. We consider it both a blessing and a responsibility to 
-                help turn our clients' vision into reality.
+                help turn our clients&apos; vision into reality.
               </p>
 
               <p className="leading-relaxed">
