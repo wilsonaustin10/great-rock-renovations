@@ -30,7 +30,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Great Rock Renovations</h3>
             <p className="text-gray-400 mb-4">
-              Austin&apos;s trusted construction and renovation experts. Building dreams, one project at a time.
+              Houston&apos;s trusted construction and renovation experts. Building dreams, one project at a time.
             </p>
             <div className="flex space-x-4">
               <a
@@ -99,11 +99,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <a
-                href="tel:512-555-0100"
+                href="tel:713-555-0100"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                <span>(512) 555-0100</span>
+                <span>(713) 555-0100</span>
               </a>
               <a
                 href="mailto:info@greatrockrenovations.com"
@@ -116,7 +116,7 @@ const Footer = () => {
                 <MapPin className="h-4 w-4 mt-1" />
                 <span>
                   123 Construction Way<br />
-                  Austin, TX 78701
+                  Houston, TX 77001
                 </span>
               </div>
             </div>
@@ -130,7 +130,7 @@ const Footer = () => {
               © {currentYear} Great Rock Renovations. All rights reserved.
             </p>
             <p className="text-gray-400 text-sm mt-2 sm:mt-0">
-              Built Right. In Austin.
+              Built Right. In Houston.
             </p>
           </div>
         </div>

@@ -7,7 +7,7 @@ const testimonials = [
   {
     id: 1,
     name: 'Sarah Johnson',
-    location: 'West Lake Hills',
+    location: 'Memorial',
     rating: 5,
     text: 'Great Rock Renovations transformed our backyard with a beautiful deck. The team was professional, on-time, and the quality of work exceeded our expectations. Highly recommend!',
     project: 'Deck Installation',
@@ -16,7 +16,7 @@ const testimonials = [
   {
     id: 2,
     name: 'Michael Chen',
-    location: 'Downtown Austin',
+    location: 'Downtown Houston',
     rating: 5,
     text: 'Our kitchen remodel was completed ahead of schedule and within budget. The attention to detail and craftsmanship was outstanding. We couldn\'t be happier with the results!',
     project: 'Kitchen Remodel',
@@ -25,7 +25,7 @@ const testimonials = [
   {
     id: 3,
     name: 'Emily Rodriguez',
-    location: 'South Austin',
+    location: 'The Heights',
     rating: 5,
     text: 'Professional, reliable, and excellent quality work. They replaced our roof after storm damage and handled everything with our insurance company. Stress-free experience!',
     project: 'Roof Replacement',
@@ -34,7 +34,7 @@ const testimonials = [
   {
     id: 4,
     name: 'David Thompson',
-    location: 'Lakeway',
+    location: 'Sugar Land',
     rating: 5,
     text: 'The team built a custom fence that perfectly matches our home\'s aesthetic. They were communicative throughout the process and delivered exactly what we wanted.',
     project: 'Fence Installation',

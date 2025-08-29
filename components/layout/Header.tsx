@@ -45,11 +45,11 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="tel:512-555-0100"
+                href="tel:713-555-0100"
                 className="flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors duration-200"
               >
                 <Phone className="h-4 w-4" />
-                <span className="font-semibold">(512) 555-0100</span>
+                <span className="font-semibold">(713) 555-0100</span>
               </Link>
             </div>
           </div>
@@ -85,12 +85,12 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="tel:512-555-0100"
+                href="tel:713-555-0100"
                 className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Phone className="h-4 w-4" />
-                <span>(512) 555-0100</span>
+                <span>(713) 555-0100</span>
               </Link>
             </div>
           </div>

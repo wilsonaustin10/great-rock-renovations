@@ -100,7 +100,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
-                    placeholder="(512) 555-0100"
+                    placeholder="(713) 555-0100"
                   />
                 </div>
                 <div>
@@ -163,7 +163,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a
-                href="tel:512-555-0100"
+                href="tel:713-555-0100"
                 className="flex items-start gap-4 group"
               >
                 <div className="bg-primary-100 p-3 rounded-lg group-hover:bg-primary-200 transition-colors">
@@ -171,7 +171,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-primary-600">(512) 555-0100</p>
+                  <p className="text-primary-600">(713) 555-0100</p>
                   <p className="text-sm text-gray-600">Mon-Fri 8am-6pm</p>
                 </div>
               </a>
@@ -197,7 +197,7 @@ const Contact = () => {
                 <div>
                   <p className="font-semibold text-gray-900">Office</p>
                   <p className="text-gray-600">123 Construction Way</p>
-                  <p className="text-gray-600">Austin, TX 78701</p>
+                  <p className="text-gray-600">Houston, TX 77001</p>
                 </div>
               </div>
 
@@ -217,7 +217,7 @@ const Contact = () => {
             {/* Map */}
             <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110281.00000000002!2d-97.7430608!3d30.267153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b599a0cc032f%3A0x5d9b464bd469d57a!2sAustin%2C%20TX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221133.33475961378!2d-95.68148689999999!3d29.8169606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d9501%3A0xca329b2e4c93a6d0!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

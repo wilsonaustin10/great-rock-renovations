@@ -74,7 +74,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full mb-8">
             <Shield className="h-4 w-4" />
-            <span className="text-sm font-semibold">Austin&apos;s Most Trusted Contractor</span>
+            <span className="text-sm font-semibold">Houston&apos;s Most Trusted Contractor</span>
           </div>
           
           {/* Main Heading */}
@@ -85,7 +85,7 @@ const Hero = () => {
           
           {/* Subheading */}
           <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-            Professional construction and renovation services in Austin, TX. 
+            Professional construction and renovation services in Houston, TX. 
             From deck building to complete home remodeling, we deliver quality 
             craftsmanship that lasts.
           </p>
