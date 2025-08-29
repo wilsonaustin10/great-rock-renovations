@@ -1,19 +1,11 @@
-import { CheckCircle, Users, Award, ShieldCheck } from 'lucide-react';
+import { CheckCircle, Users, Award, ShieldCheck, Heart, Hammer, Home } from 'lucide-react';
+import Image from 'next/image';
 
 const About = () => {
-  const features = [
-    'Licensed and fully insured contractors',
-    'Free consultations and detailed quotes',
-    'Quality materials from trusted suppliers',
-    'Experienced and skilled craftsmen',
-    'On-time project completion',
-    'Competitive and transparent pricing',
-  ];
-
-  const stats = [
-    { icon: Users, value: '50+', label: 'Expert Team Members' },
-    { icon: Award, value: '15+', label: 'Years of Excellence' },
-    { icon: ShieldCheck, value: '100%', label: 'Satisfaction Guaranteed' },
+  const values = [
+    { icon: Hammer, title: 'Craftsmanship', description: '12+ years of excellence' },
+    { icon: Heart, title: 'Faith-Driven', description: 'Guided by integrity' },
+    { icon: Users, title: 'Family-Owned', description: 'Local Houston business' },
   ];
 
   return (
@@ -21,64 +13,93 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image Side */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              <img
-                src="https://images.unsplash.com/photo-1581094794329-c8112c39047e?w=400&h=300&fit=crop"
-                alt="Construction team at work"
-                className="rounded-lg shadow-lg"
+          <div className="relative order-2 lg:order-1">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl">
+              <Image
+                src="/images/family.jpg"
+                alt="Austin Taylor, Kendall Taylor, Cooper, Duke and Leighton - The Great Rock Renovations Family"
+                width={600}
+                height={400}
+                className="w-full h-auto object-cover"
+                priority
               />
-              <img
-                src="https://images.unsplash.com/photo-1574359411903-8d64c6040d8f?w=400&h=300&fit=crop"
-                alt="Quality construction"
-                className="rounded-lg shadow-lg mt-8"
-              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                <p className="text-white text-lg font-semibold">The Taylor Family</p>
+                <p className="text-white/90 text-sm">Austin, Kendall, Cooper, Duke & Leighton</p>
+              </div>
             </div>
-            <div className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-primary-600 text-white px-8 py-4 rounded-lg shadow-xl">
-              <p className="text-2xl font-bold text-center">Built Right. In Austin.</p>
+            
+            {/* Values Cards */}
+            <div className="grid grid-cols-3 gap-4 mt-6">
+              {values.map((value, index) => {
+                const Icon = value.icon;
+                return (
+                  <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
+                    <Icon className="h-8 w-8 text-primary-600 mx-auto mb-2" />
+                    <p className="text-sm font-semibold text-gray-900">{value.title}</p>
+                    <p className="text-xs text-gray-600">{value.description}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
           {/* Content Side */}
-          <div>
+          <div className="order-1 lg:order-2">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              Why Choose Great Rock Renovations?
+              More Than a Construction Company
             </h2>
-            <p className="text-lg text-gray-600 mb-6">
-              With over 15 years of experience in the Austin construction industry, 
-              we&apos;ve built our reputation on quality craftsmanship, honest communication, 
-              and exceptional customer service. Every project we undertake is a testament 
-              to our commitment to excellence.
-            </p>
-            <p className="text-lg text-gray-600 mb-8">
-              From the initial consultation to the final walkthrough, we work closely 
-              with our clients to ensure their vision becomes reality. Our team of 
-              skilled professionals takes pride in delivering results that exceed 
-              expectations.
-            </p>
+            
+            <div className="space-y-4 text-gray-600">
+              <p className="text-lg leading-relaxed">
+                At Great Rock Renovations, we are more than a construction company. We are a family-owned 
+                business built on integrity, craftsmanship, and a passion for serving others. With over 12 
+                years of renovating residential and commercial properties, we understand that every project 
+                is deeply personal. Homes and businesses are places where people build their lives, create 
+                memories, and establish legacies. We consider it both a blessing and a responsibility to 
+                help turn our clients' vision into reality.
+              </p>
 
-            {/* Features List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-primary-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
+              <p className="leading-relaxed">
+                As a local, family-owned company in the Houston area, we take pride in knowing our work 
+                contributes to the beauty and strength of our community. From driveways and patios to 
+                decorative flooring and full renovation projects, we approach each job with the same 
+                dedication to excellence. Our commitment extends not only to the finished product but 
+                also to the way we care for our customers throughout the process.
+              </p>
+
+              <p className="leading-relaxed">
+                Our company is guided by faith and built on principles of honesty, respect, and hard work. 
+                We believe the way we treat people matters just as much as the quality of the work we deliver. 
+                That is why we are committed to clear communication, dependable service, and results that 
+                stand the test of time.
+              </p>
+
+              <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg">
+                <p className="text-primary-900 italic">
+                  With every project we complete, a portion of our proceeds is donated to one of our ministry 
+                  partners. This allows us to extend the impact of our work beyond construction, helping to 
+                  meet real needs and supporting causes that strengthen our community both locally and globally.
+                </p>
+              </div>
+
+              <p className="leading-relaxed font-medium text-gray-700">
+                When you choose Great Rock Renovations, you are not just hiring a contractor. You are 
+                partnering with a family-owned company dedicated to faith, excellence, and service. We 
+                would be honored to help turn your ideas into reality and deliver results that are both 
+                beautiful and lasting.
+              </p>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-gray-200">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <div key={index} className="text-center">
-                    <Icon className="h-8 w-8 text-primary-600 mx-auto mb-2" />
-                    <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-                    <p className="text-sm text-gray-600">{stat.label}</p>
-                  </div>
-                );
-              })}
+            {/* CTA Button */}
+            <div className="mt-8">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-md hover:bg-primary-700 transition-colors duration-200 font-semibold"
+              >
+                Start Your Project With Us
+                <Home className="h-5 w-5" />
+              </a>
             </div>
           </div>
         </div>
