@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
 
 const Footer = () => {
@@ -28,8 +29,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Great Rock Renovations</h3>
-            <p className="text-gray-400 mb-4">
+            <div className="mb-4">
+              <Image
+                src="/images/Inverted Great Rock Marquee 876x550.png"
+                alt="Great Rock Renovations"
+                width={320}
+                height={200}
+                className="h-40 w-auto"
+              />
+            </div>
+            <p className="text-gray-300 mb-4">
               Houston&apos;s trusted construction and renovation experts. Building dreams, one project at a time.
             </p>
             <div className="flex space-x-4">
@@ -37,7 +46,7 @@ const Footer = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </a>
@@ -45,7 +54,7 @@ const Footer = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
@@ -53,7 +62,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-300 hover:text-white transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -68,7 +77,7 @@ const Footer = () => {
                 <li key={service}>
                   <Link
                     href="#services"
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {service}
                   </Link>
@@ -85,7 +94,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -126,10 +135,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-300 text-sm">
               © {currentYear} Great Rock Renovations. All rights reserved.
             </p>
-            <p className="text-gray-400 text-sm mt-2 sm:mt-0">
+            <p className="text-gray-300 text-sm mt-2 sm:mt-0">
               Built Right. In Houston.
             </p>
           </div>

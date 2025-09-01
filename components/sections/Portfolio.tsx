@@ -6,61 +6,155 @@ import { X } from 'lucide-react';
 const portfolioItems = [
   {
     id: 1,
-    category: 'deck',
-    title: 'Modern Composite Deck',
+    category: 'kitchen',
+    title: 'Modern Kitchen Renovation',
     location: 'River Oaks',
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=400&fit=crop',
-    description: 'Beautiful composite deck with built-in lighting and custom railings.',
+    image: '/images/Examples/07 Kitchen.jpg',
+    description: 'Complete kitchen transformation with modern cabinetry and appliances.',
   },
   {
     id: 2,
     category: 'kitchen',
-    title: 'Contemporary Kitchen Remodel',
+    title: 'Kitchen & Sink Upgrade',
     location: 'Midtown Houston',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&h=400&fit=crop',
-    description: 'Complete kitchen renovation with modern appliances and quartz countertops.',
+    image: '/images/Examples/08 Kitchen & Sink.jpg',
+    description: 'Beautiful kitchen renovation featuring a new farmhouse sink and fixtures.',
   },
   {
     id: 3,
-    category: 'fence',
-    title: 'Cedar Privacy Fence',
-    location: 'Bellaire',
-    image: 'https://images.unsplash.com/photo-1621873495884-845e939ac8df?w=600&h=400&fit=crop',
-    description: 'Custom cedar fence installation with decorative top trim.',
+    category: 'kitchen',
+    title: 'Kitchen with Quartz Counters',
+    location: 'Memorial',
+    image: '/images/Examples/09 Kitchen & Counters.jpg',
+    description: 'Stunning kitchen remodel with premium quartz countertops.',
   },
   {
     id: 4,
-    category: 'bathroom',
-    title: 'Luxury Bathroom Renovation',
-    location: 'West University',
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&h=400&fit=crop',
-    description: 'Spa-inspired bathroom with walk-in shower and freestanding tub.',
+    category: 'kitchen',
+    title: 'Contemporary Kitchen Design',
+    location: 'The Heights',
+    image: '/images/Examples/Kitchen.webp',
+    description: 'Modern kitchen with open concept design and custom lighting.',
   },
   {
     id: 5,
-    category: 'roofing',
-    title: 'Complete Roof Replacement',
-    location: 'The Woodlands',
-    image: 'https://images.unsplash.com/photo-1632327042343-702c12ae0c9e?w=600&h=400&fit=crop',
-    description: 'Full roof replacement with architectural shingles and improved ventilation.',
+    category: 'kitchen',
+    title: 'Traditional Kitchen Remodel',
+    location: 'West University',
+    image: '/images/Examples/KitchenOHP_2372_3_4.jpg',
+    description: 'Classic kitchen renovation with timeless design elements.',
   },
   {
     id: 6,
-    category: 'deck',
-    title: 'Poolside Deck Extension',
+    category: 'bathroom',
+    title: 'Guest Bathroom Renovation',
+    location: 'Bellaire',
+    image: '/images/Examples/18 Guest Bathroom.jpg',
+    description: 'Complete guest bathroom transformation with modern fixtures.',
+  },
+  {
+    id: 7,
+    category: 'bathroom',
+    title: 'Guest Bath & Shower',
+    location: 'Sugar Land',
+    image: '/images/Examples/20 Guest Bathroom & Shower.jpg',
+    description: 'Guest bathroom featuring a luxurious walk-in shower.',
+  },
+  {
+    id: 8,
+    category: 'bathroom',
+    title: 'Master Bathroom Vanity',
     location: 'Katy',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc9e?w=600&h=400&fit=crop',
-    description: 'Expanded deck area around pool with slip-resistant decking.',
+    image: '/images/Examples/24 Master Bathroom Vanity.jpg',
+    description: 'Elegant master bathroom with double vanity installation.',
+  },
+  {
+    id: 9,
+    category: 'bathroom',
+    title: 'Luxury Master Bathroom',
+    location: 'The Woodlands',
+    image: '/images/Examples/25 Master Bathroom.jpg',
+    description: 'Spa-inspired master bathroom complete renovation.',
+  },
+  {
+    id: 10,
+    category: 'bathroom',
+    title: 'Master Bath with Walk-in Shower',
+    location: 'Cypress',
+    image: '/images/Examples/26 Master Bathroom Vanity & Shower.jpg',
+    description: 'Master bathroom featuring custom vanity and spacious shower.',
+  },
+  {
+    id: 11,
+    category: 'bathroom',
+    title: 'Master Shower Installation',
+    location: 'Spring',
+    image: '/images/Examples/27 Master Bathroom Shower.jpg',
+    description: 'Luxurious master shower with premium tile work.',
+  },
+  {
+    id: 12,
+    category: 'bathroom',
+    title: 'Modern Bathroom Design',
+    location: 'Montrose',
+    image: '/images/Examples/Bath09.jpg',
+    description: 'Contemporary bathroom with sleek fixtures and finishes.',
+  },
+  {
+    id: 13,
+    category: 'bathroom',
+    title: 'Classic Bathroom Remodel',
+    location: 'River Oaks',
+    image: '/images/Examples/Bath10.jpg',
+    description: 'Traditional bathroom renovation with timeless appeal.',
+  },
+  {
+    id: 14,
+    category: 'bathroom',
+    title: 'Elegant Bathroom Update',
+    location: 'Memorial',
+    image: '/images/Examples/Bath22.jpg',
+    description: 'Sophisticated bathroom upgrade with premium materials.',
+  },
+  {
+    id: 15,
+    category: 'bathroom',
+    title: 'Spa-Style Bathroom',
+    location: 'Heights',
+    image: '/images/Examples/BathOHP_2351_2_3.jpg',
+    description: 'Relaxing spa-inspired bathroom renovation.',
+  },
+  {
+    id: 16,
+    category: 'bathroom',
+    title: 'Contemporary Bath Design',
+    location: 'Midtown',
+    image: '/images/Examples/BathOHP_2354_5_6.jpg',
+    description: 'Modern bathroom with custom tile and fixtures.',
+  },
+  {
+    id: 17,
+    category: 'bathroom',
+    title: 'Master Suite Bathroom',
+    location: 'West University',
+    image: '/images/Examples/BathOHP_2357_8_9.jpg',
+    description: 'Luxurious master suite bathroom complete renovation.',
+  },
+  {
+    id: 18,
+    category: 'exterior',
+    title: 'Complete Exterior Renovation',
+    location: 'Houston',
+    image: '/images/Examples/Exterior After.webp',
+    description: 'Full exterior transformation including siding, trim, and landscaping.',
   },
 ];
 
 const categories = [
   { id: 'all', name: 'All Projects' },
-  { id: 'deck', name: 'Decks' },
   { id: 'kitchen', name: 'Kitchens' },
   { id: 'bathroom', name: 'Bathrooms' },
-  { id: 'fence', name: 'Fences' },
-  { id: 'roofing', name: 'Roofing' },
+  { id: 'exterior', name: 'Exteriors' },
 ];
 
 const Portfolio = () => {
@@ -79,22 +173,22 @@ const Portfolio = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Recent Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-800 max-w-2xl mx-auto">
             Take a look at some of our completed projects. Each one represents our 
             commitment to quality and attention to detail.
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        {/* Category Filter - Enhanced for Mobile */}
+        <div className="flex overflow-x-auto pb-2 md:justify-center gap-2 mb-12 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-4 py-2 rounded-full font-medium transition-colors duration-200 ${
+              className={`px-5 py-2.5 rounded-full font-semibold transition-all duration-300 whitespace-nowrap ${
                 selectedCategory === category.id
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg scale-105'
+                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200 hover:shadow-md'
               }`}
             >
               {category.name}
@@ -102,12 +196,12 @@ const Portfolio = () => {
           ))}
         </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Portfolio Grid - Optimized for All Devices */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               onClick={() => setSelectedImage(item)}
             >
               <div className="aspect-w-16 aspect-h-12">
@@ -117,10 +211,11 @@ const Portfolio = () => {
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-xl font-semibold mb-1">{item.title}</h3>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-white">
+                  <h3 className="text-lg md:text-xl font-bold mb-1">{item.title}</h3>
                   <p className="text-sm opacity-90">{item.location}</p>
+                  <p className="text-xs mt-2 text-blue-300 font-semibold">Tap to view details</p>
                 </div>
               </div>
             </div>
@@ -146,8 +241,8 @@ const Portfolio = () => {
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {selectedImage.title}
                 </h3>
-                <p className="text-primary-600 mb-2">{selectedImage.location}</p>
-                <p className="text-gray-600">{selectedImage.description}</p>
+                <p className="text-blue-600 mb-2">{selectedImage.location}</p>
+                <p className="text-gray-800">{selectedImage.description}</p>
               </div>
             </div>
           </div>

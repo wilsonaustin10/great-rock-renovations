@@ -63,32 +63,32 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-800 max-w-2xl mx-auto">
             Don&apos;t just take our word for it. Here&apos;s what our satisfied customers 
             have to say about their experience with Great Rock Renovations.
           </p>
         </div>
 
-        {/* Testimonials Carousel */}
+        {/* Testimonials Carousel - Enhanced for Mobile */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-white rounded-2xl shadow-xl p-8 md:p-12">
+          <div className="relative bg-gradient-to-br from-white to-gray-50 rounded-2xl shadow-2xl p-6 md:p-12 border border-gray-100">
             {/* Quote Icon */}
-            <Quote className="absolute top-8 left-8 h-8 w-8 text-primary-100" />
+            <Quote className="absolute top-8 left-8 h-8 w-8 text-blue-100" />
 
-            {/* Navigation Buttons */}
+            {/* Navigation Buttons - Improved Touch Targets */}
             <button
               onClick={prevTestimonial}
-              className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-5 w-5 text-gray-700" />
+              <ChevronLeft className="h-5 w-5 text-gray-900" />
             </button>
             <button
               onClick={nextTestimonial}
-              className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white shadow-lg hover:shadow-xl hover:bg-gray-50 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-5 w-5 text-gray-700" />
+              <ChevronRight className="h-5 w-5 text-gray-900" />
             </button>
 
             {/* Testimonial Content */}
@@ -100,8 +100,8 @@ const Testimonials = () => {
                 ))}
               </div>
 
-              {/* Text */}
-              <p className="text-xl md:text-2xl text-gray-700 mb-8 italic leading-relaxed">
+              {/* Text - Responsive Sizing */}
+              <p className="text-lg md:text-xl lg:text-2xl text-gray-900 mb-8 italic leading-relaxed px-8 md:px-12">
                 &ldquo;{testimonials[currentIndex].text}&rdquo;
               </p>
 
@@ -116,7 +116,7 @@ const Testimonials = () => {
                   <p className="font-semibold text-gray-900">
                     {testimonials[currentIndex].name}
                   </p>
-                  <p className="text-sm text-gray-600">
+                  <p className="text-sm text-gray-800">
                     {testimonials[currentIndex].location} • {testimonials[currentIndex].project}
                   </p>
                 </div>
@@ -131,7 +131,7 @@ const Testimonials = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 w-2 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-primary-600 w-8' 
+                      ? 'bg-blue-600 w-8' 
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
@@ -144,20 +144,20 @@ const Testimonials = () => {
         {/* Trust Badges */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary-600">500+</p>
-            <p className="text-sm text-gray-600 mt-1">Happy Customers</p>
+            <p className="text-3xl font-bold text-blue-600">500+</p>
+            <p className="text-sm text-gray-800 mt-1">Happy Customers</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary-600">4.9</p>
-            <p className="text-sm text-gray-600 mt-1">Average Rating</p>
+            <p className="text-3xl font-bold text-blue-600">4.9</p>
+            <p className="text-sm text-gray-800 mt-1">Average Rating</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary-600">100%</p>
-            <p className="text-sm text-gray-600 mt-1">Satisfaction Rate</p>
+            <p className="text-3xl font-bold text-blue-600">100%</p>
+            <p className="text-sm text-gray-800 mt-1">Satisfaction Rate</p>
           </div>
           <div className="text-center">
-            <p className="text-3xl font-bold text-primary-600">15+</p>
-            <p className="text-sm text-gray-600 mt-1">Years Experience</p>
+            <p className="text-3xl font-bold text-blue-600">12+</p>
+            <p className="text-sm text-gray-800 mt-1">Years Experience</p>
           </div>
         </div>
       </div>

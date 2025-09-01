@@ -69,60 +69,82 @@ const Hero = () => {
       </button>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div className="max-w-4xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full mb-8">
+          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full mb-4">
             <Shield className="h-4 w-4" />
             <span className="text-sm font-semibold">Houston&apos;s Most Trusted Contractor</span>
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
             Building Dreams,{' '}
-            <span className="text-primary-400">One Project</span> at a Time
+            <span className="text-blue-400">One Project</span> at a Time
           </h1>
           
           {/* Subheading */}
-          <p className="text-lg md:text-xl lg:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto">
-            Professional construction and renovation services in Houston, TX. 
-            From deck building to complete home remodeling, we deliver quality 
-            craftsmanship that lasts.
+          <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 max-w-3xl">
+            Houston&apos;s Preferred Contractor For Building Projects Including:
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          {/* Services List */}
+          <ul className="text-sm md:text-base lg:text-lg text-gray-200 mb-6 space-y-0.5 md:space-y-1 max-w-3xl">
+            <li className="flex items-start">
+              <span className="text-blue-400 mr-2">•</span>
+              <span>Decks, Fences, Patios, Pergolas</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-400 mr-2">•</span>
+              <span>Roofing and Siding Replacement</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-400 mr-2">•</span>
+              <span>Kitchen and Bathroom Remodeling</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-400 mr-2">•</span>
+              <span>Commercial or Residential</span>
+            </li>
+            <li className="flex items-start">
+              <span className="text-blue-400 mr-2">•</span>
+              <span>No Small Repairs</span>
+            </li>
+          </ul>
+
+          {/* CTAs - Enhanced for Better Conversion */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-8 py-4 rounded-md hover:bg-primary-700 transition-all duration-200 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500  animate-pulse-slow mobile-cta sm:w-auto"
             >
-              Get Free Quote
-              <ArrowRight className="h-5 w-5" />
+              Get Your Free Quote Now
+              <ArrowRight className="h-5 w-5 animate-bounce-horizontal" />
             </Link>
             <Link
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white text-white px-8 py-4 rounded-md hover:bg-white hover:text-gray-900 transition-all duration-200 font-semibold text-lg"
+              className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white  mobile-cta sm:w-auto"
             >
               View Our Work
             </Link>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto">
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <Clock className="h-8 w-8 text-primary-400 mx-auto mb-2" />
-              <p className="text-3xl font-bold text-white">15+</p>
-              <p className="text-sm text-gray-300">Years Experience</p>
+          {/* Trust Indicators - Enhanced Visual Hierarchy */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 max-w-2xl">
+            <div className="text-center bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/30 hover:border-white/50 transition-all duration-300 hover:scale-105 group">
+              <Clock className="h-8 w-8 md:h-10 md:w-10 text-blue-400 mx-auto mb-2 group-hover:animate-pulse" />
+              <p className="text-3xl md:text-4xl font-bold text-white">12+</p>
+              <p className="text-sm md:text-base text-gray-200">Years Experience</p>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <Award className="h-8 w-8 text-primary-400 mx-auto mb-2" />
-              <p className="text-3xl font-bold text-white">500+</p>
-              <p className="text-sm text-gray-300">Projects Completed</p>
+            <div className="text-center bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/30 hover:border-white/50 transition-all duration-300 hover:scale-105 group">
+              <Award className="h-8 w-8 md:h-10 md:w-10 text-blue-400 mx-auto mb-2 group-hover:animate-pulse" />
+              <p className="text-3xl md:text-4xl font-bold text-white">500+</p>
+              <p className="text-sm md:text-base text-gray-200">Happy Families</p>
             </div>
-            <div className="text-center bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-              <Shield className="h-8 w-8 text-primary-400 mx-auto mb-2" />
-              <p className="text-3xl font-bold text-white">100%</p>
-              <p className="text-sm text-gray-300">Satisfaction Rate</p>
+            <div className="text-center bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-md rounded-xl p-4 md:p-6 border border-white/30 hover:border-white/50 transition-all duration-300 hover:scale-105 group">
+              <Shield className="h-8 w-8 md:h-10 md:w-10 text-blue-400 mx-auto mb-2 group-hover:animate-pulse" />
+              <p className="text-3xl md:text-4xl font-bold text-white">100%</p>
+              <p className="text-sm md:text-base text-gray-200">Satisfaction</p>
             </div>
           </div>
         </div>

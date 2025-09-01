@@ -35,9 +35,9 @@ const About = () => {
                 const Icon = value.icon;
                 return (
                   <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
-                    <Icon className="h-8 w-8 text-primary-600 mx-auto mb-2" />
+                    <Icon className="h-8 w-8 text-blue-600 mx-auto mb-2" />
                     <p className="text-sm font-semibold text-gray-900">{value.title}</p>
-                    <p className="text-xs text-gray-600">{value.description}</p>
+                    <p className="text-xs text-gray-800">{value.description}</p>
                   </div>
                 );
               })}
@@ -50,7 +50,7 @@ const About = () => {
               More Than a Construction Company
             </h2>
             
-            <div className="space-y-4 text-gray-600">
+            <div className="space-y-4 text-gray-800">
               <p className="text-lg leading-relaxed">
                 At Great Rock Renovations, we are more than a construction company. We are a family-owned 
                 business built on integrity, craftsmanship, and a passion for serving others. With over 12 
@@ -75,15 +75,15 @@ const About = () => {
                 stand the test of time.
               </p>
 
-              <div className="bg-primary-50 border-l-4 border-primary-600 p-4 rounded-r-lg">
-                <p className="text-primary-900 italic">
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-4 rounded-r-lg">
+                <p className="text-blue-900 italic">
                   With every project we complete, a portion of our proceeds is donated to one of our ministry 
                   partners. This allows us to extend the impact of our work beyond construction, helping to 
                   meet real needs and supporting causes that strengthen our community both locally and globally.
                 </p>
               </div>
 
-              <p className="leading-relaxed font-medium text-gray-700">
+              <p className="leading-relaxed font-medium text-gray-900">
                 When you choose Great Rock Renovations, you are not just hiring a contractor. You are 
                 partnering with a family-owned company dedicated to faith, excellence, and service. We 
                 would be honored to help turn your ideas into reality and deliver results that are both 
@@ -91,15 +91,18 @@ const About = () => {
               </p>
             </div>
 
-            {/* CTA Button */}
-            <div className="mt-8">
+            {/* CTA Button - Enhanced */}
+            <div className="mt-8 space-y-4">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-md hover:bg-primary-700 transition-colors duration-200 font-semibold"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               >
-                Start Your Project With Us
+                Start Your Project Today
                 <Home className="h-5 w-5" />
               </a>
+              <p className="text-sm text-gray-800 mt-2">
+                🟢 Available for consultations this week
+              </p>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 
@@ -23,12 +24,14 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary-600">
-                Great Rock
-              </span>
-              <span className="text-2xl font-light text-gray-700 ml-2">
-                Renovations
-              </span>
+              <Image
+                src="/images/Great Rock Simple Horizontal 1024x300.png"
+                alt="Great Rock Renovations"
+                width={200}
+                height={58}
+                className="h-12 w-auto"
+                priority
+              />
             </Link>
           </div>
 
@@ -39,17 +42,17 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                  className="text-gray-900 hover:text-blue-600 transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </Link>
               ))}
               <Link
                 href="tel:713-555-0100"
-                className="flex items-center gap-2 bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 transition-colors duration-200"
+                className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               >
-                <Phone className="h-4 w-4" />
-                <span className="font-semibold">(713) 555-0100</span>
+                <Phone className="h-4 w-4 animate-pulse" />
+                <span className="font-bold">(713) 555-0100</span>
               </Link>
             </div>
           </div>
@@ -58,7 +61,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
             >
               <span className="sr-only">Open main menu</span>
               {isMobileMenuOpen ? (
@@ -78,7 +81,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary-600 hover:bg-gray-50"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:text-blue-600 hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
@@ -86,11 +89,11 @@ const Header = () => {
               ))}
               <Link
                 href="tel:713-555-0100"
-                className="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium bg-primary-600 text-white hover:bg-primary-700"
+                className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg mx-2 mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <Phone className="h-4 w-4" />
-                <span>(713) 555-0100</span>
+                <Phone className="h-4 w-4 animate-pulse" />
+                <span>Call (713) 555-0100</span>
               </Link>
             </div>
           </div>

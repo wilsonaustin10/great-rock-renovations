@@ -1,4 +1,4 @@
-import { Home, Fence, HardHat, Hammer, PaintBucket, Wrench } from 'lucide-react';
+import { Home, Fence, HardHat, Hammer, PaintBucket, Wrench, ArrowRight, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -7,7 +7,7 @@ const services = [
     title: 'Deck Building',
     description: 'Custom deck design and construction to extend your living space outdoors.',
     icon: Home,
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=300&fit=crop',
+    image: '/images/Examples/Exterior After.webp',
   },
   {
     id: 2,
@@ -28,14 +28,14 @@ const services = [
     title: 'Kitchen Remodeling',
     description: 'Transform your kitchen into a beautiful and functional space.',
     icon: Hammer,
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop',
+    image: '/images/Examples/Kitchen.webp',
   },
   {
     id: 5,
     title: 'Bathroom Renovation',
     description: 'Upgrade your bathroom with modern fixtures and design.',
     icon: PaintBucket,
-    image: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop',
+    image: '/images/Examples/25 Master Bathroom.jpg',
   },
   {
     id: 6,
@@ -55,20 +55,20 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-800 max-w-2xl mx-auto">
             From simple repairs to complete renovations, we offer a full range of 
             construction services to meet your needs.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Services Grid - Enhanced for Mobile and Conversion */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {services.map((service) => {
             const Icon = service.icon;
             return (
               <div
                 key={service.id}
-                className="group relative bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+                className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 hover:border-blue-200"
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
@@ -80,7 +80,7 @@ const Services = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <div className="bg-white p-3 rounded-full shadow-lg">
-                      <Icon className="h-6 w-6 text-primary-600" />
+                      <Icon className="h-6 w-6 text-blue-600" />
                     </div>
                   </div>
                 </div>
@@ -90,16 +90,16 @@ const Services = () => {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-800 mb-4">
                     {service.description}
                   </p>
                   <Link
                     href="#contact"
-                    className="inline-flex items-center text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-bold transition-all duration-200 group/link hover:gap-3"
                   >
-                    Learn More
+                    Get Quote
                     <svg
-                      className="ml-2 h-4 w-4"
+                      className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -118,14 +118,33 @@ const Services = () => {
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-primary-600 text-white px-8 py-3 rounded-md hover:bg-primary-700 transition-colors duration-200 font-semibold"
-          >
-            Get Your Free Quote Today
-          </Link>
+        {/* CTA - Enhanced for Maximum Conversion */}
+        <div className="text-center mt-16 bg-gradient-to-r from-blue-50 to-blue-50 rounded-2xl p-8 md:p-12">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Ready to Transform Your Space?
+          </h3>
+          <p className="text-lg text-gray-800 mb-8 max-w-2xl mx-auto">
+            Get a free, no-obligation quote today and see why Houston families trust us with their homes.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500 "
+            >
+              Get Your Free Quote
+              <ArrowRight className="h-5 w-5" />
+            </Link>
+            <a
+              href="tel:713-555-0100"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all duration-300 font-bold text-lg border-2 border-blue-200 hover:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-500 "
+            >
+              <Phone className="h-5 w-5" />
+              Call (713) 555-0100
+            </a>
+          </div>
+          <p className="text-sm text-gray-900 mt-6">
+            ⭐ Rated 4.9/5 by 500+ Houston homeowners
+          </p>
         </div>
       </div>
     </section>

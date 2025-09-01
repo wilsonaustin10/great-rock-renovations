@@ -42,22 +42,27 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Get Your Free Quote Today
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-800 max-w-2xl mx-auto">
             Ready to start your project? Contact us for a free consultation and quote. 
             We&apos;ll respond within 24 hours.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-gray-50 rounded-lg p-8">
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">
-              Request a Quote
-            </h3>
+          {/* Contact Form - Enhanced for Conversion */}
+          <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 md:p-8 shadow-xl border border-gray-100">
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                Get Your Free Quote in 24 Hours
+              </h3>
+              <p className="text-sm text-green-600 font-semibold">
+                ✓ No obligation ✓ Free consultation ✓ Licensed & insured
+              </p>
+            </div>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-900 mb-2">
                     Full Name *
                   </label>
                   <input
@@ -67,12 +72,12 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
                     Email Address *
                   </label>
                   <input
@@ -82,7 +87,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -90,7 +95,7 @@ const Contact = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-900 mb-2">
                     Phone Number
                   </label>
                   <input
@@ -99,12 +104,12 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                     placeholder="(713) 555-0100"
                   />
                 </div>
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-900 mb-2">
                     Service Needed
                   </label>
                   <select
@@ -112,7 +117,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                   >
                     <option value="">Select a service</option>
                     <option value="deck">Deck Building</option>
@@ -127,7 +132,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-900 mb-2">
                   Project Details
                 </label>
                 <textarea
@@ -136,17 +141,17 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                   placeholder="Tell us about your project..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-md hover:bg-primary-700 transition-colors duration-200 font-semibold"
+                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               >
                 <Send className="h-5 w-5" />
-                Send Message
+                Get My Free Quote
               </button>
             </form>
           </div>
@@ -156,7 +161,7 @@ const Contact = () => {
             <h3 className="text-2xl font-semibold text-gray-900 mb-6">
               Get in Touch
             </h3>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-800 mb-8">
               Have questions about our services? Need an urgent repair? 
               We&apos;re here to help. Reach out to us through any of the methods below.
             </p>
@@ -166,13 +171,13 @@ const Contact = () => {
                 href="tel:713-555-0100"
                 className="flex items-start gap-4 group"
               >
-                <div className="bg-primary-100 p-3 rounded-lg group-hover:bg-primary-200 transition-colors">
-                  <Phone className="h-6 w-6 text-primary-600" />
+                <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
+                  <Phone className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-primary-600">(713) 555-0100</p>
-                  <p className="text-sm text-gray-600">Mon-Fri 8am-6pm</p>
+                  <p className="text-blue-600">(713) 555-0100</p>
+                  <p className="text-sm text-gray-800">Mon-Fri 8am-6pm</p>
                 </div>
               </a>
 
@@ -180,36 +185,36 @@ const Contact = () => {
                 href="mailto:info@greatrockrenovations.com"
                 className="flex items-start gap-4 group"
               >
-                <div className="bg-primary-100 p-3 rounded-lg group-hover:bg-primary-200 transition-colors">
-                  <Mail className="h-6 w-6 text-primary-600" />
+                <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
+                  <Mail className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-primary-600">info@greatrockrenovations.com</p>
-                  <p className="text-sm text-gray-600">We reply within 24 hours</p>
+                  <p className="text-blue-600">info@greatrockrenovations.com</p>
+                  <p className="text-sm text-gray-800">We reply within 24 hours</p>
                 </div>
               </a>
 
               <div className="flex items-start gap-4">
-                <div className="bg-primary-100 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-primary-600" />
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  <MapPin className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Office</p>
-                  <p className="text-gray-600">123 Construction Way</p>
-                  <p className="text-gray-600">Houston, TX 77001</p>
+                  <p className="text-gray-800">123 Construction Way</p>
+                  <p className="text-gray-800">Houston, TX 77001</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="bg-primary-100 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-primary-600" />
+                <div className="bg-blue-100 p-3 rounded-lg">
+                  <Clock className="h-6 w-6 text-blue-600" />
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Business Hours</p>
-                  <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p className="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
-                  <p className="text-gray-600">Sunday: Closed</p>
+                  <p className="text-gray-800">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                  <p className="text-gray-800">Saturday: 9:00 AM - 4:00 PM</p>
+                  <p className="text-gray-800">Sunday: Closed</p>
                 </div>
               </div>
             </div>
