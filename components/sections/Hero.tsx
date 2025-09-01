@@ -35,9 +35,8 @@ const Hero = () => {
           onLoadedData={() => setIsVideoLoaded(true)}
           className="absolute inset-0 w-full h-full object-cover scale-105"
         >
-          {/* Placeholder video - replace /videos/hero-video.mp4 with your actual video */}
-          <source src="/videos/hero-video.mp4" type="video/mp4" />
-          {/* Alternative online placeholder for now */}
+          <source src="/videos/Great Rock Hero Video.mp4" type="video/mp4" />
+          {/* Fallback video in case the main video fails to load */}
           <source src="https://cdn.coverr.co/videos/coverr-construction-workers-on-site-7778/1080p.mp4" type="video/mp4" />
         </video>
         
