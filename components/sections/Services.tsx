@@ -7,21 +7,21 @@ const services = [
     title: 'Deck Building',
     description: 'Custom deck design and construction to extend your living space outdoors.',
     icon: Home,
-    image: '/images/Examples/Exterior After.webp',
+    image: '/images/Fence and Patio/Deck1.png',
   },
   {
     id: 2,
     title: 'Fence Installation',
     description: 'Quality fencing solutions for privacy, security, and curb appeal.',
     icon: Fence,
-    image: 'https://images.unsplash.com/photo-1621873495884-845e939ac8df?w=400&h=300&fit=crop',
+    image: '/images/Fence and Patio/Fence1.png',
   },
   {
     id: 3,
     title: 'Roofing Services',
     description: 'Professional roof replacement and repair to protect your investment.',
     icon: HardHat,
-    image: 'https://images.unsplash.com/photo-1632327042343-702c12ae0c9e?w=400&h=300&fit=crop',
+    image: '/images/Fence and Patio/Roof1.png',
   },
   {
     id: 4,
@@ -39,10 +39,10 @@ const services = [
   },
   {
     id: 6,
-    title: 'General Contracting',
-    description: 'Complete construction management for your residential or commercial project.',
+    title: 'Patio & Outdoor Living',
+    description: 'Create beautiful outdoor spaces with custom patios and hardscaping.',
     icon: Wrench,
-    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=400&h=300&fit=crop',
+    image: '/images/Fence and Patio/Patio1.png',
   },
 ];
 
