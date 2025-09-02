@@ -22,14 +22,14 @@ const VisionMission = () => {
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">Vision</h3>
             <p className="text-gray-900 leading-relaxed mb-4">
-              At Great Rock Renovations, our vision is to glorify God through excellence in concrete work — creating beautiful and lasting spaces that enhance homes and bring value to families across Houston. We strive to be known not only for the quality of our craftsmanship but also for the faith and integrity that guide it. As Jesus taught, the wise build on the rock, and we are committed to building on that eternal foundation.
+              At Great Rock Renovations, our vision is to glorify God through excellence in construction and renovation — creating beautiful and lasting spaces that enhance homes and bring value to families across Houston. We strive to be known not only for the quality of our craftsmanship but also for the faith and integrity that guide it. As Jesus taught, the wise build on the rock, and we are committed to building on that eternal foundation.
             </p>
           </div>
 
           <div className="mb-12">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">Mission</h3>
             <p className="text-gray-900 leading-relaxed mb-4">
-              Our mission is to do all of our work as unto the Lord, giving our very best in every project we take on. We pursue excellence in all that we do — in the concrete we craft, in the way we treat our crews, in how we serve our customers, and in how we bless our community.
+              Our mission is to do all of our work as unto the Lord, giving our very best in every project we take on. We pursue excellence in all that we do — in the structures we build, the spaces we renovate, in the way we treat our crews, in how we serve our customers, and in how we bless our community.
             </p>
             <p className="text-gray-900 leading-relaxed mb-4">
               We view every day as an opportunity to not only be a light to our customers, but also to every person who is involved in our business. Every project is more than construction; it is a chance to live out biblical principles — to love our neighbors as ourselves (Matthew 22:39), to serve with humility (Philippians 2:3–4), and to walk in integrity (Proverbs 11:3).
