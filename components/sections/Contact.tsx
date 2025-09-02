@@ -11,6 +11,7 @@ const Contact = () => {
     service: '',
     message: '',
   });
+  const [consent, setConsent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -21,8 +22,12 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      alert('Please agree to the Terms & Conditions and Privacy Policy to continue.');
+      return;
+    }
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log('Form submitted:', formData, 'Consent:', consent);
     // You would typically send this to an API endpoint
     alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
     setFormData({
@@ -32,6 +37,7 @@ const Contact = () => {
       service: '',
       message: '',
     });
+    setConsent(false);
   };
 
   return (
@@ -144,6 +150,33 @@ const Contact = () => {
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
                   placeholder="Tell us about your project..."
                 />
+              </div>
+
+              {/* Consent Checkbox */}
+              <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <label className="flex items-start gap-3 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    required
+                    className="mt-1 h-5 w-5 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <span className="text-xs text-gray-700 leading-relaxed">
+                    I agree to the{' '}
+                    <a href="/terms" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                      Terms & Conditions
+                    </a>{' '}
+                    and{' '}
+                    <a href="/privacy" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                      Privacy Policy
+                    </a>.
+                    By submitting this form, you consent to receive SMS messages and/or emails and/or calls from Great Rock Renovations. 
+                    Message frequency varies. To unsubscribe, follow the instructions provided in our communications. 
+                    Msg & data rates may apply for SMS. Your information is secure and will not be sold to third parties. 
+                    Text HELP for HELP, text STOP to cancel.
+                  </span>
+                </label>
               </div>
 
               <button

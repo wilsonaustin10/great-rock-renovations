@@ -21,6 +21,7 @@ const Footer = () => {
     { name: 'Testimonials', href: '#testimonials' },
     { name: 'Contact', href: '#contact' },
     { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Terms & Conditions', href: '/terms' },
   ];
 
   return (
