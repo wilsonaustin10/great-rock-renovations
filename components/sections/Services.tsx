@@ -1,4 +1,4 @@
-import { Home, Fence, HardHat, Hammer, PaintBucket, Wrench, ArrowRight, Phone } from 'lucide-react';
+import { Home, Fence, HardHat, Hammer, PaintBucket, Wrench, ArrowRight, Phone, Construction } from 'lucide-react';
 import Link from 'next/link';
 
 const services = [
@@ -43,6 +43,13 @@ const services = [
     description: 'Create beautiful outdoor spaces with custom patios and hardscaping.',
     icon: Wrench,
     image: '/images/Fence and Patio/Patio1.png',
+  },
+  {
+    id: 7,
+    title: 'Concrete Work',
+    description: 'Professional concrete driveways, walkways, foundations, and decorative concrete solutions.',
+    icon: Construction,
+    image: '/images/Concrete/3E4B18B9-22EA-4F02-AB92-5562E19EAD85_4_5005_c.jpeg',
   },
 ];
 
