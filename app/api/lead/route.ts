@@ -40,6 +40,20 @@ export async function POST(request: Request) {
       );
     }
 
+    // Format service name for display
+    const serviceLabels: Record<string, string> = {
+      'deck': 'Deck Building',
+      'fence': 'Fence Installation',
+      'kitchen': 'Kitchen Remodeling',
+      'bathroom': 'Bathroom Renovation',
+      'roofing': 'Roofing Services',
+      'general': 'General Contracting',
+      'other': 'Other',
+      'discount-request': 'Discount Request'
+    };
+
+    const formattedService = serviceLabels[service] || service || 'General Inquiry';
+
     const leadData = {
       locationId: ghlLocationId,
       firstName: name.split(' ')[0],
@@ -48,12 +62,13 @@ export async function POST(request: Request) {
       phone: phone || '',
       source: source,
       tags: [service || 'general-inquiry'],
-      customFields: {
-        service: service || '',
-        message: message || '',
-        consent: consent.toString(),
-        submittedAt: new Date().toISOString()
-      }
+      notes: message || '',  // Map project details to notes field
+      customFields: [
+        {
+          key: 'service_needed',  // This should match your GHL custom field key
+          value: formattedService
+        }
+      ]
     };
 
     let leadCreated = false;
