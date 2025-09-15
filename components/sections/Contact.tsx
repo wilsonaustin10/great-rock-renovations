@@ -105,7 +105,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
                     placeholder="John Doe"
                   />
                 </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -137,7 +137,7 @@ const Contact = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
                     placeholder="(832) 979-6414"
                   />
                 </div>
@@ -150,7 +150,7 @@ const Contact = () => {
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
                   >
                     <option value="">Select a service</option>
                     <option value="deck">Deck Building</option>
@@ -174,7 +174,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
                   placeholder="Tell us about your project..."
                 />
               </div>
