@@ -109,11 +109,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <a
-                href="tel:713-555-0100"
+                href="tel:832-979-6414"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                <span>(713) 555-0100</span>
+                <span>(832) 979-6414</span>
               </a>
               <a
                 href="mailto:info@greatrockrenovations.com"
@@ -125,8 +125,8 @@ const Footer = () => {
               <div className="flex items-start gap-2 text-gray-400">
                 <MapPin className="h-4 w-4 mt-1" />
                 <span>
-                  123 Construction Way<br />
-                  Houston, TX 77001
+                  15219 Cypress Post Ln<br />
+                  Cypress, TX 77429
                 </span>
               </div>
             </div>

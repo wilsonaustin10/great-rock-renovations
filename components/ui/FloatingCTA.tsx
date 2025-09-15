@@ -42,7 +42,7 @@ const FloatingCTA = () => {
               <MessageSquare className="h-6 w-6" />
             </Link>
             <a
-              href="tel:713-555-0100"
+              href="tel:832-979-6414"
               className="flex items-center justify-center w-14 h-14 bg-white text-blue-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-2 border-blue-200"
             >
               <Phone className="h-6 w-6" />
@@ -85,11 +85,11 @@ const FloatingCTA = () => {
                 Get Free Quote
               </Link>
               <a
-                href="tel:713-555-0100"
+                href="tel:832-979-6414"
                 className="inline-flex items-center gap-2 bg-white text-blue-600 px-5 py-2.5 rounded-lg hover:bg-gray-50 transition-all duration-300 font-bold border-2 border-blue-200 hover:border-blue-300"
               >
                 <Phone className="h-4 w-4" />
-                (713) 555-0100
+                (832) 979-6414
               </a>
             </div>
           </div>

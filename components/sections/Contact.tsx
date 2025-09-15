@@ -111,7 +111,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300"
-                    placeholder="(713) 555-0100"
+                    placeholder="(832) 979-6414"
                   />
                 </div>
                 <div>
@@ -201,7 +201,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a
-                href="tel:713-555-0100"
+                href="tel:832-979-6414"
                 className="flex items-start gap-4 group"
               >
                 <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
@@ -209,7 +209,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-blue-600">(713) 555-0100</p>
+                  <p className="text-blue-600">(832) 979-6414</p>
                   <p className="text-sm text-gray-800">Mon-Fri 8am-6pm</p>
                 </div>
               </a>
@@ -234,8 +234,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Office</p>
-                  <p className="text-gray-800">123 Construction Way</p>
-                  <p className="text-gray-800">Houston, TX 77001</p>
+                  <p className="text-gray-800">15219 Cypress Post Ln</p>
+                  <p className="text-gray-800">Cypress, TX 77429</p>
                 </div>
               </div>
 
@@ -255,7 +255,7 @@ const Contact = () => {
             {/* Map */}
             <div className="mt-8 rounded-lg overflow-hidden shadow-lg h-64">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d221133.33475961378!2d-95.68148689999999!3d29.8169606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d9501%3A0xca329b2e4c93a6d0!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.098456239877!2d-95.65577288488173!3d30.144527281811454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86405d3e7b965111%3A0x2c6b0a0e1e3d9c15!2s15219%20Cypress%20Post%20Ln%2C%20Cypress%2C%20TX%2077429!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

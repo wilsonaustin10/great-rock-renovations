@@ -53,7 +53,7 @@ export default function TermsConditions() {
               <li>Carriers are not liable for delayed or undelivered messages</li>
             </ul>
             <p>
-              For support, contact us at (713) 555-0100 or info@greatrockrenovations.com
+              For support, contact us at (832) 979-6414 or info@greatrockrenovations.com
             </p>
           </section>
 
@@ -175,9 +175,9 @@ export default function TermsConditions() {
             <p>For questions about these Terms & Conditions, please contact us at:</p>
             <div className="bg-gray-50 p-4 rounded-lg mt-4">
               <p className="font-semibold">Great Rock Renovations</p>
-              <p>123 Construction Way</p>
-              <p>Houston, TX 77001</p>
-              <p>Phone: (713) 555-0100</p>
+              <p>15219 Cypress Post Ln</p>
+              <p>Cypress, TX 77429</p>
+              <p>Phone: (832) 979-6414</p>
               <p>Email: info@greatrockrenovations.com</p>
               <p>Website: www.greatrockrenovations.com</p>
             </div>

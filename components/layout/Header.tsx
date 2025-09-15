@@ -48,11 +48,11 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="tel:713-555-0100"
+                href="tel:832-979-6414"
                 className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 "
               >
                 <Phone className="h-4 w-4 animate-pulse" />
-                <span className="font-bold">(713) 555-0100</span>
+                <span className="font-bold">(832) 979-6414</span>
               </Link>
             </div>
           </div>
@@ -88,12 +88,12 @@ const Header = () => {
                 </Link>
               ))}
               <Link
-                href="tel:713-555-0100"
+                href="tel:832-979-6414"
                 className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-bold bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg mx-2 mt-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <Phone className="h-4 w-4 animate-pulse" />
-                <span>Call (713) 555-0100</span>
+                <span>Call (832) 979-6414</span>
               </Link>
             </div>
           </div>

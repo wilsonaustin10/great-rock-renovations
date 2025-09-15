@@ -4,17 +4,17 @@ import Link from 'next/link';
 const services = [
   {
     id: 1,
-    title: 'Deck Building',
-    description: 'Custom deck design and construction to extend your living space outdoors.',
-    icon: Home,
-    image: '/images/Fence and Patio/Deck1.png',
+    title: 'Bathroom Renovation',
+    description: 'Upgrade your bathroom with modern fixtures and design.',
+    icon: PaintBucket,
+    image: '/images/Examples/25 Master Bathroom.jpg',
   },
   {
     id: 2,
-    title: 'Fence Installation',
-    description: 'Quality fencing solutions for privacy, security, and curb appeal.',
-    icon: Fence,
-    image: '/images/Fence and Patio/Fence1.png',
+    title: 'Kitchen Remodeling',
+    description: 'Transform your kitchen into a beautiful and functional space.',
+    icon: Hammer,
+    image: '/images/Examples/Kitchen.webp',
   },
   {
     id: 3,
@@ -25,31 +25,31 @@ const services = [
   },
   {
     id: 4,
-    title: 'Kitchen Remodeling',
-    description: 'Transform your kitchen into a beautiful and functional space.',
-    icon: Hammer,
-    image: '/images/Examples/Kitchen.webp',
-  },
-  {
-    id: 5,
-    title: 'Bathroom Renovation',
-    description: 'Upgrade your bathroom with modern fixtures and design.',
-    icon: PaintBucket,
-    image: '/images/Examples/25 Master Bathroom.jpg',
-  },
-  {
-    id: 6,
     title: 'Patio & Outdoor Living',
     description: 'Create beautiful outdoor spaces with custom patios and hardscaping.',
     icon: Wrench,
     image: '/images/Fence and Patio/Patio1.png',
   },
   {
-    id: 7,
+    id: 5,
     title: 'Concrete Work',
     description: 'Professional concrete driveways, walkways, foundations, and decorative concrete solutions.',
     icon: Construction,
     image: '/images/Concrete/3E4B18B9-22EA-4F02-AB92-5562E19EAD85_4_5005_c.jpeg',
+  },
+  {
+    id: 6,
+    title: 'Fence Installation',
+    description: 'Quality fencing solutions for privacy, security, and curb appeal.',
+    icon: Fence,
+    image: '/images/Fence and Patio/Fence1.png',
+  },
+  {
+    id: 7,
+    title: 'Deck Building',
+    description: 'Custom deck design and construction to extend your living space outdoors.',
+    icon: Home,
+    image: '/images/Fence and Patio/Deck1.png',
   },
 ];
 
@@ -142,11 +142,11 @@ const Services = () => {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <a
-              href="tel:713-555-0100"
+              href="tel:832-979-6414"
               className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all duration-300 font-bold text-lg border-2 border-blue-200 hover:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-500 "
             >
               <Phone className="h-5 w-5" />
-              Call (713) 555-0100
+              Call (832) 979-6414
             </a>
           </div>
           <p className="text-sm text-gray-900 mt-6">
