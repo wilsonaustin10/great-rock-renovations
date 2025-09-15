@@ -8,6 +8,7 @@ const ExitIntentPopup = () => {
   const [email, setEmail] = useState('');
   const [hasShown, setHasShown] = useState(false);
   const [consent, setConsent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     // Check if popup has been shown in this session
@@ -31,16 +32,47 @@ const ExitIntentPopup = () => {
     };
   }, [hasShown]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!consent) {
       alert('Please agree to the Terms & Conditions and Privacy Policy to continue.');
       return;
     }
-    // Handle email submission
-    console.log('Email captured:', email, 'Consent:', consent);
-    alert('Thank you! Check your email for your 10% discount code.');
-    setIsVisible(false);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: email.split('@')[0],
+          email: email,
+          source: 'exit-intent-popup',
+          service: 'discount-request',
+          message: 'Requested 10% discount via exit intent popup',
+          consent: true,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && (data.success || data.fallback)) {
+        alert('Thank you! Check your email for your 10% discount code.');
+        setIsVisible(false);
+        setEmail('');
+        setConsent(false);
+      } else {
+        alert('There was an issue processing your request. Please try again or call us at (832) 979-6414.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an issue processing your request. Please try again or call us at (832) 979-6414.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isVisible) return null;
@@ -110,9 +142,17 @@ const ExitIntentPopup = () => {
             
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5"
+              disabled={isSubmitting}
+              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Get My 10% Discount
+              {isSubmitting ? (
+                <>
+                  <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  Processing...
+                </>
+              ) : (
+                'Get My 10% Discount'
+              )}
             </button>
           </form>
 

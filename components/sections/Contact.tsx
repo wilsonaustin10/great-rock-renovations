@@ -20,24 +20,51 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!consent) {
       alert('Please agree to the Terms & Conditions and Privacy Policy to continue.');
       return;
     }
-    // Handle form submission here
-    console.log('Form submitted:', formData, 'Consent:', consent);
-    // You would typically send this to an API endpoint
-    alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: '',
-    });
-    setConsent(false);
+
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/lead', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'contact-form',
+          consent: true,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && (data.success || data.fallback)) {
+        alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: '',
+        });
+        setConsent(false);
+      } else {
+        alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -181,10 +208,20 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 "
+                disabled={isSubmitting}
+                className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="h-5 w-5" />
-                Get My Free Quote
+                {isSubmitting ? (
+                  <>
+                    <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-5 w-5" />
+                    Get My Free Quote
+                  </>
+                )}
               </button>
             </form>
           </div>
