@@ -53,6 +53,22 @@ export async function POST(request: Request) {
 
     const formattedService = serviceLabels[service] || service || 'General Inquiry';
 
+    // Build custom fields array
+    const customFields = [
+      {
+        key: 'service_needed',  // This should match your GHL custom field key
+        value: formattedService
+      }
+    ];
+
+    // Add project details as a custom field if you have one set up for it
+    if (message) {
+      customFields.push({
+        key: 'project_details',  // You'll need to create this custom field in GHL
+        value: message
+      });
+    }
+
     const leadData = {
       locationId: ghlLocationId,
       firstName: name.split(' ')[0],
@@ -61,13 +77,7 @@ export async function POST(request: Request) {
       phone: phone || '',
       source: source,
       tags: [service || 'general-inquiry'],
-      notes: message || '',  // Map project details to notes field
-      customFields: [
-        {
-          key: 'service_needed',  // This should match your GHL custom field key
-          value: formattedService
-        }
-      ]
+      customFields: customFields
     };
 
     try {

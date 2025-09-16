@@ -4,16 +4,23 @@ This website is configured to send leads directly to your Go High Level CRM.
 
 ## Setup Instructions
 
-### 1. Create Custom Field in Go High Level
+### 1. Create Custom Fields in Go High Level
 
-Before setting up the integration, create a custom field in GHL:
+Before setting up the integration, create these custom fields in GHL:
 
 1. Log into Go High Level
 2. Navigate to **Settings > Custom Fields**
-3. Create a new custom field:
+3. Create two custom fields:
+   
+   **Field 1 - Service Needed:**
    - Field Name: `Service Needed`
    - Field Key: `service_needed` (this must match exactly)
    - Field Type: Text or Dropdown (with your service options)
+   
+   **Field 2 - Project Details:**
+   - Field Name: `Project Details`
+   - Field Key: `project_details` (this must match exactly)
+   - Field Type: Text Area
 
 ### 2. Get Your Go High Level Credentials
 
@@ -56,9 +63,8 @@ The integration sends leads directly to Go High Level using the v2 API to create
 - **Contact Information**: Name, Email, Phone
 - **Lead Source**: Identifies where the lead came from (contact form, exit popup, etc.)
 - **Service Needed**: Mapped to "service_needed" custom field in GHL
-- **Project Details/Notes**: Message content is mapped to the notes field
+- **Project Details**: Message content is mapped to "project_details" custom field
 - **Tags**: Service type added as a tag for easy filtering
-- **Consent**: Confirmation they agreed to terms
 
 ### Lead Sources
 
