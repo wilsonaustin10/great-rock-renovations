@@ -10,17 +10,18 @@ Before setting up the integration, create these custom fields in GHL:
 
 1. Log into Go High Level
 2. Navigate to **Settings > Custom Fields**
-3. Create two custom fields:
+3. Create the following custom fields:
    
-   **Field 1 - Service Needed:**
-   - Field Name: `Service Needed`
-   - Field Key: `service_needed` (this must match exactly)
-   - Field Type: Text or Dropdown (with your service options)
+   **Required Fields:**
+   - Service Needed: `service_needed` (Text/Dropdown)
+   - Project Details: `project_details` (Text Area)
    
-   **Field 2 - Project Details:**
-   - Field Name: `Project Details`
-   - Field Key: `project_details` (this must match exactly)
-   - Field Type: Text Area
+   **UTM Tracking Fields (for Meta/Google Ads tracking):**
+   - UTM Source: `utm_source` (Text)
+   - UTM Medium: `utm_medium` (Text)
+   - UTM Campaign: `utm_campaign` (Text)
+   - UTM Content: `utm_content` (Text) - optional
+   - UTM Term: `utm_term` (Text) - optional
 
 ### 2. Get Your Go High Level Credentials
 
@@ -72,6 +73,39 @@ The system tracks different lead sources:
 - `contact-form`: Main contact form
 - `exit-intent-popup`: Exit intent popup for discount
 
+## UTM Tracking for Meta & Google Ads
+
+The system automatically tracks leads from paid advertising campaigns using UTM parameters.
+
+### Setting Up Meta (Facebook/Instagram) Ads:
+
+1. In Meta Ads Manager, add UTM parameters to your ad URLs:
+   ```
+   https://yoursite.com?utm_source=facebook&utm_medium=paid&utm_campaign=summer_2024
+   ```
+
+2. Common Meta UTM configurations:
+   - Facebook Ads: `utm_source=facebook&utm_medium=paid`
+   - Instagram Ads: `utm_source=instagram&utm_medium=paid`
+   - Meta Ads (both): `utm_source=meta&utm_medium=paid`
+
+3. The system will automatically:
+   - Capture these parameters when someone visits from your ad
+   - Store them in the browser session
+   - Include them with the lead submission
+   - Tag the lead source as "Facebook Ads", "Instagram Ads", or "Meta Ads"
+
+### Setting Up Google Ads:
+
+Use: `utm_source=google&utm_medium=cpc&utm_campaign=your_campaign`
+
+### What Gets Tracked:
+
+- **Lead Source**: Automatically identified (Facebook Ads, Instagram Ads, Google Ads, etc.)
+- **Campaign Details**: Which specific campaign drove the lead
+- **Ad Content**: Which ad variation performed best (using utm_content)
+- **Keywords**: For Google Ads (using utm_term)
+
 ## Testing
 
 To test the integration:
@@ -80,6 +114,15 @@ To test the integration:
 2. Check Go High Level contacts to verify the lead was created
 3. Check the browser console for any error messages
 4. Server logs will show if there are configuration issues
+
+### Testing UTM Tracking:
+
+1. Visit your site with test UTM parameters:
+   ```
+   https://yoursite.com?utm_source=facebook&utm_medium=paid&utm_campaign=test
+   ```
+2. Submit a lead form
+3. Check in GHL that the UTM fields are populated
 
 ## Troubleshooting
 

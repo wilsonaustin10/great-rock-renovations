@@ -11,7 +11,12 @@ export async function POST(request: Request) {
       service, 
       message,
       source = 'website',
-      consent 
+      consent,
+      utm_source,
+      utm_medium,
+      utm_campaign,
+      utm_content,
+      utm_term
     } = body;
 
     if (!name || !email) {
@@ -53,6 +58,20 @@ export async function POST(request: Request) {
 
     const formattedService = serviceLabels[service] || service || 'General Inquiry';
 
+    // Determine lead source based on UTM parameters
+    let leadSource = source;
+    if (utm_source) {
+      if (utm_source.toLowerCase().includes('facebook') || utm_source.toLowerCase().includes('fb')) {
+        leadSource = 'Facebook Ads';
+      } else if (utm_source.toLowerCase().includes('instagram') || utm_source.toLowerCase().includes('ig')) {
+        leadSource = 'Instagram Ads';
+      } else if (utm_source.toLowerCase().includes('google')) {
+        leadSource = 'Google Ads';
+      } else if (utm_source.toLowerCase().includes('meta')) {
+        leadSource = 'Meta Ads';
+      }
+    }
+
     // Build custom fields array
     const customFields = [
       {
@@ -69,13 +88,45 @@ export async function POST(request: Request) {
       });
     }
 
+    // Add UTM tracking fields
+    if (utm_source) {
+      customFields.push({
+        key: 'utm_source',
+        value: utm_source
+      });
+    }
+    if (utm_medium) {
+      customFields.push({
+        key: 'utm_medium',
+        value: utm_medium
+      });
+    }
+    if (utm_campaign) {
+      customFields.push({
+        key: 'utm_campaign', 
+        value: utm_campaign
+      });
+    }
+    if (utm_content) {
+      customFields.push({
+        key: 'utm_content',
+        value: utm_content
+      });
+    }
+    if (utm_term) {
+      customFields.push({
+        key: 'utm_term',
+        value: utm_term
+      });
+    }
+
     const leadData = {
       locationId: ghlLocationId,
       firstName: name.split(' ')[0],
       lastName: name.split(' ').slice(1).join(' ') || '',
       email,
       phone: phone || '',
-      source: source,
+      source: leadSource,
       tags: [service || 'general-inquiry'],
       customFields: customFields
     };

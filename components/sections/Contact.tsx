@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 
 const Contact = () => {
@@ -12,6 +12,38 @@ const Contact = () => {
     message: '',
   });
   const [consent, setConsent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [utmParams, setUtmParams] = useState({
+    utm_source: '',
+    utm_medium: '',
+    utm_campaign: '',
+    utm_content: '',
+    utm_term: ''
+  });
+
+  useEffect(() => {
+    // Capture UTM parameters from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const capturedUtmParams = {
+      utm_source: urlParams.get('utm_source') || '',
+      utm_medium: urlParams.get('utm_medium') || '',
+      utm_campaign: urlParams.get('utm_campaign') || '',
+      utm_content: urlParams.get('utm_content') || '',
+      utm_term: urlParams.get('utm_term') || ''
+    };
+    setUtmParams(capturedUtmParams);
+
+    // Store in sessionStorage for persistence across page navigation
+    if (capturedUtmParams.utm_source) {
+      sessionStorage.setItem('utm_params', JSON.stringify(capturedUtmParams));
+    } else {
+      // Try to get from sessionStorage if not in URL
+      const storedParams = sessionStorage.getItem('utm_params');
+      if (storedParams) {
+        setUtmParams(JSON.parse(storedParams));
+      }
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -19,8 +51,6 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,6 +71,7 @@ const Contact = () => {
           ...formData,
           source: 'contact-form',
           consent: true,
+          ...utmParams,
         }),
       });
 
