@@ -30,7 +30,6 @@ export async function POST(request: Request) {
 
     const ghlApiKey = process.env.GHL_API_KEY;
     const ghlLocationId = process.env.GHL_LOCATION_ID;
-    const ghlWebhookUrl = process.env.GHL_WEBHOOK_URL;
 
     if (!ghlApiKey || !ghlLocationId) {
       console.error('Missing Go High Level configuration');
@@ -71,9 +70,6 @@ export async function POST(request: Request) {
       ]
     };
 
-    let leadCreated = false;
-    let webhookSent = false;
-
     try {
       const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
         method: 'POST',
@@ -88,41 +84,40 @@ export async function POST(request: Request) {
       if (!ghlResponse.ok) {
         const errorText = await ghlResponse.text();
         console.error('GHL API Error:', errorText);
-      } else {
-        leadCreated = true;
+        
+        // Log the lead data as fallback
+        const fallbackData = {
+          ...leadData,
+          error: 'Failed to sync with CRM',
+          timestamp: new Date().toISOString()
+        };
+        console.log('Fallback lead data:', JSON.stringify(fallbackData, null, 2));
+        
+        return NextResponse.json(
+          { 
+            success: false,
+            message: 'We received your information but there was an issue with our CRM. We will contact you shortly.',
+            fallback: true
+          },
+          { status: 200 }
+        );
       }
+
+      const responseData = await ghlResponse.json();
+      
+      return NextResponse.json({
+        success: true,
+        message: 'Lead successfully submitted',
+        contactId: responseData.contact?.id || responseData.id
+      });
+
     } catch (apiError) {
       console.error('GHL API call failed:', apiError);
-    }
-
-    if (ghlWebhookUrl) {
-      try {
-        const webhookResponse = await fetch(ghlWebhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            ...leadData,
-            timestamp: new Date().toISOString(),
-            source: `${source}-webhook`
-          }),
-        });
-
-        if (webhookResponse.ok) {
-          webhookSent = true;
-        }
-      } catch (webhookError) {
-        console.error('GHL Webhook failed:', webhookError);
-      }
-    }
-
-    if (!leadCreated && !webhookSent) {
-      console.error('Failed to send lead to GHL via both API and webhook');
       
+      // Log the lead data as fallback
       const fallbackData = {
         ...leadData,
-        error: 'Failed to sync with CRM',
+        error: 'API call failed',
         timestamp: new Date().toISOString()
       };
       console.log('Fallback lead data:', JSON.stringify(fallbackData, null, 2));
@@ -130,21 +125,12 @@ export async function POST(request: Request) {
       return NextResponse.json(
         { 
           success: false,
-          message: 'We received your information but there was an issue with our CRM. We will contact you shortly.',
+          message: 'We received your information but there was an issue submitting it. We will contact you shortly.',
           fallback: true
         },
         { status: 200 }
       );
     }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Lead successfully submitted',
-      methods: {
-        api: leadCreated,
-        webhook: webhookSent
-      }
-    });
 
   } catch (error) {
     console.error('Lead submission error:', error);

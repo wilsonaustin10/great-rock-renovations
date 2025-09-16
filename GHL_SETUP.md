@@ -30,25 +30,16 @@ Before setting up the integration, create a custom field in GHL:
 1. In Go High Level, go to **Settings > Business Profile > Company Info**
 2. Copy your Location ID (also called Account ID)
 
-### 4. Optional: Set Up a Webhook (Recommended)
-
-For redundancy, you can also set up a webhook:
-
-1. In Go High Level, create a new workflow
-2. Set the trigger to "Webhook"
-3. Copy the webhook URL provided
-
-### 5. Configure Environment Variables
+### 4. Configure Environment Variables
 
 Edit the `.env.local` file in the project root and add your credentials:
 
 ```env
 GHL_API_KEY=your_actual_api_key_here
 GHL_LOCATION_ID=your_actual_location_id_here
-GHL_WEBHOOK_URL=your_webhook_url_here (optional)
 ```
 
-### 6. Restart the Development Server
+### 5. Restart the Development Server
 
 After adding the environment variables, restart your development server:
 
@@ -58,10 +49,7 @@ npm run dev
 
 ## How It Works
 
-The integration sends leads to Go High Level in two ways:
-
-1. **Primary Method**: Direct API call to create a contact
-2. **Fallback Method**: Webhook (if configured)
+The integration sends leads directly to Go High Level using the v2 API to create contacts.
 
 ### Lead Data Sent
 
