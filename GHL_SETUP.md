@@ -18,9 +18,12 @@ Before setting up the integration, create a custom field in GHL:
 ### 2. Get Your Go High Level Credentials
 
 1. Log into your Go High Level account
-2. Navigate to **Settings > Business Profile > API Keys**
-3. Create a new API key or use an existing one
-4. Copy the API key
+2. Navigate to **Settings > Integrations > API Settings** (or **Settings > API Keys**)
+3. Create a new Private Integration App or API key:
+   - For Sub-Account level: Create a Private App
+   - Name it something like "Website Lead Integration"
+   - Select the required scopes: `contacts.write`, `contacts.readonly`
+4. Copy the generated API key/token
 
 ### 3. Get Your Location ID
 
@@ -93,17 +96,32 @@ To test the integration:
 3. Check browser console for error messages
 4. Ensure `.env.local` file is properly formatted
 
+### Getting the Correct API Key
+
+Go High Level has two types of API access:
+1. **Agency Level**: For agency-wide integrations
+2. **Sub-Account Level**: For specific location integrations (most common)
+
+For Sub-Account/Location API Key:
+1. Go to **Settings > Integrations > API Settings**
+2. Create a "Private Integration App"
+3. Grant permissions: `contacts.write`, `contacts.readonly`
+4. Copy the generated Bearer token
+
 ### API Key Permissions
 
 Your API key needs these permissions:
-- Contacts: Read & Write
-- Custom Fields: Read (if using custom fields)
+- `contacts.write`: To create new contacts
+- `contacts.readonly`: To check existing contacts
+- Custom Fields access (if using custom fields)
 
 ### Common Issues
 
+- **"Api key is invalid"**: You may be using an old v1 API key. Create a new Private Integration App
 - **"Server configuration error"**: Environment variables not set
-- **401 Unauthorized**: Invalid API key
+- **401 Unauthorized**: Invalid or expired API key
 - **400 Bad Request**: Invalid Location ID or data format
+- **Location ID mismatch**: Ensure the Location ID matches the sub-account where the API key was created
 
 ## Security
 

@@ -75,11 +75,12 @@ export async function POST(request: Request) {
     let webhookSent = false;
 
     try {
-      const ghlResponse = await fetch('https://rest.gohighlevel.com/v1/contacts/', {
+      const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${ghlApiKey}`,
           'Content-Type': 'application/json',
+          'Version': '2021-07-28',
         },
         body: JSON.stringify(leadData),
       });
