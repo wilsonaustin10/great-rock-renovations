@@ -33,7 +33,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const ghlApiKey = process.env.GHL_API_KEY;
+    // Try to use Private Integration token first, fallback to Location Access Token
+    const ghlApiKey = process.env.GHL_API_KEY || process.env.GHL_LOCATION_ACCESS_TOKEN;
     const ghlLocationId = process.env.GHL_LOCATION_ID;
 
     if (!ghlApiKey || !ghlLocationId) {
@@ -43,6 +44,9 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    // Determine which type of token we're using
+    const isLocationToken = ghlApiKey.startsWith('eyJ');
 
     // Format service name for display
     const serviceLabels: Record<string, string> = {
@@ -132,7 +136,12 @@ export async function POST(request: Request) {
     };
 
     try {
-      const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
+      // Use different endpoint based on token type
+      const apiUrl = isLocationToken 
+        ? 'https://services.leadconnectorhq.com/contacts/'
+        : 'https://services.leadconnectorhq.com/contacts/';
+      
+      const ghlResponse = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${ghlApiKey}`,
@@ -144,12 +153,18 @@ export async function POST(request: Request) {
 
       if (!ghlResponse.ok) {
         const errorText = await ghlResponse.text();
-        console.error('GHL API Error:', errorText);
+        console.error('GHL API Error:', {
+          status: ghlResponse.status,
+          statusText: ghlResponse.statusText,
+          error: errorText,
+          tokenType: isLocationToken ? 'Location Token' : 'Private Integration',
+          endpoint: apiUrl
+        });
         
         // Log the lead data as fallback
         const fallbackData = {
           ...leadData,
-          error: 'Failed to sync with CRM',
+          error: `Failed to sync with CRM (${ghlResponse.status})`,
           timestamp: new Date().toISOString()
         };
         console.log('Fallback lead data:', JSON.stringify(fallbackData, null, 2));
