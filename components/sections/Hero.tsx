@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowRight, Shield, Clock, Award, Volume2, VolumeX } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -41,15 +42,18 @@ const Hero = () => {
         </video>
         
         {/* Fallback image for mobile or if video fails to load */}
-        <div 
-          className={`absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${
-            isVideoLoaded ? 'opacity-0' : 'opacity-100'
-          }`}
-          style={{
-            backgroundImage: 'url("https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop")',
-            zIndex: -1
-          }}
-        />
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${
+          isVideoLoaded ? 'opacity-0' : 'opacity-100'
+        }`} style={{ zIndex: -1 }}>
+          <Image
+            src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&h=1080&fit=crop"
+            alt="Construction site background"
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
         
         {/* Dark overlay for better text readability */}
         <div className="absolute inset-0 bg-black/60"></div>

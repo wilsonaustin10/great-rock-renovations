@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import OptimizedImage from '../OptimizedImage';
 
 const portfolioItems = [
   // Bathroom projects first
@@ -360,11 +361,13 @@ const Portfolio = () => {
               className="group relative overflow-hidden rounded-xl shadow-lg cursor-pointer hover:shadow-2xl transition-all duration-300 border border-gray-100 hover:border-blue-200"
               onClick={() => setSelectedImage(item)}
             >
-              <div className="aspect-w-16 aspect-h-12">
-                <img
+              <div className="relative h-64">
+                <OptimizedImage
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
@@ -388,11 +391,16 @@ const Portfolio = () => {
               <X className="h-8 w-8" />
             </button>
             <div className="max-w-4xl w-full bg-white rounded-lg overflow-hidden">
-              <img
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                className="w-full h-auto"
-              />
+              <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
+                <OptimizedImage
+                  src={selectedImage.image}
+                  alt={selectedImage.title}
+                  fill
+                  sizes="(max-width: 1536px) 100vw, 1536px"
+                  className="object-contain"
+                  priority
+                />
+              </div>
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
                   {selectedImage.title}

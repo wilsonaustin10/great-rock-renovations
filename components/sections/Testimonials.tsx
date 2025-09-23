@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonials = [
   {
@@ -107,11 +108,15 @@ const Testimonials = () => {
 
               {/* Author */}
               <div className="flex items-center justify-center gap-4">
-                <img
-                  src={testimonials[currentIndex].image}
-                  alt={testimonials[currentIndex].name}
-                  className="h-16 w-16 rounded-full object-cover"
-                />
+                <div className="relative h-16 w-16">
+                  <Image
+                    src={testimonials[currentIndex].image}
+                    alt={testimonials[currentIndex].name}
+                    fill
+                    className="rounded-full object-cover"
+                    sizes="64px"
+                  />
+                </div>
                 <div className="text-left">
                   <p className="font-semibold text-gray-900">
                     {testimonials[currentIndex].name}

@@ -1,5 +1,6 @@
 import { Home, Fence, HardHat, Hammer, PaintBucket, Wrench, ArrowRight, Phone, Construction } from 'lucide-react';
 import Link from 'next/link';
+import OptimizedImage from '../OptimizedImage';
 
 const services = [
   {
@@ -79,10 +80,12 @@ const Services = () => {
               >
                 {/* Image */}
                 <div className="relative h-48 overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
