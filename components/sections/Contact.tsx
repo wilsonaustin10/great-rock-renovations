@@ -78,15 +78,15 @@ const Contact = () => {
       const data = await response.json();
 
       if (response.ok && (data.success || data.fallback)) {
-        alert('Thank you for your inquiry! We\'ll get back to you within 24 hours.');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          message: '',
+        // Redirect to thank you page with UTM parameters
+        const params = new URLSearchParams({
+          service: formData.service || 'general',
+          source: 'contact-form',
+          ...(utmParams.utm_source && { utm_source: utmParams.utm_source }),
+          ...(utmParams.utm_medium && { utm_medium: utmParams.utm_medium }),
+          ...(utmParams.utm_campaign && { utm_campaign: utmParams.utm_campaign }),
         });
-        setConsent(false);
+        window.location.href = `/thank-you?${params.toString()}`;
       } else {
         alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
       }

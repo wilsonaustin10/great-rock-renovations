@@ -1,9 +1,16 @@
 const https = require('https');
 
-// Test configuration
-const privateIntegrationToken = 'pit-f7cd3a77-e600-4bbb-8e5a-1c365f376517';
-const locationAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2NhdGlvbl9pZCI6ImQ5NFJrV1RYRnlIQ1B2Q2FHRmNEIiwidmVyc2lvbiI6MSwiaWF0IjoxNzU4NjU5NzgxMjMxLCJzdWIiOiJLZkUzcWZzY2VleHhxcHBhUnRkeSJ9.JodWS-x6Ih5LzQ4J2sOh46tCQzE1qjHE3lWEKU_ppsg';
-const locationId = 'd94RkWTXFyHCPvCaGFcD';
+// Test configuration - Load from environment variables
+const privateIntegrationToken = process.env.GHL_API_KEY || 'YOUR_PRIVATE_INTEGRATION_TOKEN';
+const locationAccessToken = process.env.GHL_LOCATION_ACCESS_TOKEN || 'YOUR_LOCATION_ACCESS_TOKEN';
+const locationId = process.env.GHL_LOCATION_ID || 'YOUR_LOCATION_ID';
+
+// Check if tokens are placeholders
+if (privateIntegrationToken.includes('YOUR_') && locationAccessToken.includes('YOUR_')) {
+  console.error('❌ Error: Please set your GHL API credentials in environment variables or update this script.');
+  console.log('\nUsage: GHL_API_KEY="your-key" GHL_LOCATION_ID="your-id" node scripts/test-ghl-api.js');
+  process.exit(1);
+}
 
 // Test data
 const testContact = {

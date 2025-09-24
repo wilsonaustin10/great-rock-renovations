@@ -60,10 +60,12 @@ const ExitIntentPopup = () => {
       const data = await response.json();
 
       if (response.ok && (data.success || data.fallback)) {
-        alert('Thank you! Check your email for your 10% discount code.');
-        setIsVisible(false);
-        setEmail('');
-        setConsent(false);
+        // Redirect to thank you page for discount request
+        const params = new URLSearchParams({
+          service: 'discount-request',
+          source: 'exit-intent-popup',
+        });
+        window.location.href = `/thank-you?${params.toString()}`;
       } else {
         alert('There was an issue processing your request. Please try again or call us at (832) 979-6414.');
       }
