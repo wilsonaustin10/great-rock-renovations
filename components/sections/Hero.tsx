@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight, Shield, Clock, Award, Volume2, VolumeX } from 'lucide-react';
+import { ArrowRight, Shield, Clock, Award, Volume2, VolumeX, Phone } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -74,10 +74,19 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="max-w-4xl">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full mb-4">
-            <Shield className="h-4 w-4" />
-            <span className="text-sm font-semibold">Houston&apos;s Most Trusted Contractor</span>
+          {/* Prominent Phone Number - NEW */}
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <a
+              href="tel:832-979-6414"
+              className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 animate-pulse"
+            >
+              <Phone className="h-6 w-6" />
+              <span className="text-xl">Call Now: (832) 979-6414</span>
+            </a>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full self-center">
+              <Shield className="h-4 w-4" />
+              <span className="text-sm font-semibold">Licensed & Insured</span>
+            </div>
           </div>
           
           {/* Main Heading */}
@@ -116,20 +125,33 @@ const Hero = () => {
           </ul>
 
           {/* CTAs - Enhanced for Better Conversion */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500  animate-pulse-slow mobile-cta sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500  mobile-cta sm:w-auto"
             >
-              Get Your Free Quote Now
+              Get Your Free Quote
               <ArrowRight className="h-5 w-5 animate-bounce-horizontal" />
             </Link>
+            <a
+              href="tel:832-979-6414"
+              className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-bold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white  mobile-cta sm:w-auto"
+            >
+              <Phone className="h-5 w-5" />
+              Call (832) 979-6414
+            </a>
             <Link
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white  mobile-cta sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/20 text-white px-6 py-4 rounded-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30  mobile-cta sm:w-auto"
             >
               View Our Work
             </Link>
+          </div>
+          
+          {/* Quick Response Promise */}
+          <div className="bg-yellow-400/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg inline-flex items-center gap-2 mb-12">
+            <Clock className="h-5 w-5" />
+            <span className="font-bold">Quick Response: We answer calls within 30 minutes!</span>
           </div>
 
           {/* Trust Indicators - Enhanced Visual Hierarchy */}

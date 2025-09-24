@@ -5,6 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingCTA from "@/components/ui/FloatingCTA";
 import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
+import FloatingCallButton from "@/components/FloatingCallButton";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <FloatingCTA />
+        <FloatingCallButton />
         <ExitIntentPopup />
       </body>
     </html>
