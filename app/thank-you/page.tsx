@@ -4,6 +4,7 @@ import { useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { Phone, CheckCircle, ArrowLeft, MessageSquare, Clock } from 'lucide-react';
+import PhoneLink from '@/components/PhoneLink';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -15,20 +16,16 @@ function ThankYouContent() {
 
   useEffect(() => {
     // Google Ads Conversion Tracking
-    // @ts-expect-error gtag is added by Google Analytics script
     if (typeof window !== 'undefined' && window.gtag) {
-      // @ts-expect-error gtag is added by Google Analytics script
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL', // Replace with your actual conversion ID
+        'send_to': 'AW-17524938335/FORM_CONVERSION_LABEL', // Replace with form submission conversion label
         'value': 1.0,
         'currency': 'USD'
       });
     }
 
     // Meta Pixel Conversion Tracking
-    // @ts-expect-error fbq is added by Meta Pixel script
     if (typeof window !== 'undefined' && window.fbq) {
-      // @ts-expect-error fbq is added by Meta Pixel script
       window.fbq('track', 'Lead', {
         content_name: service || 'General Inquiry',
         content_category: 'Lead Form Submission',
@@ -39,9 +36,7 @@ function ThankYouContent() {
     }
 
     // Google Analytics 4 Event
-    // @ts-expect-error gtag is added by Google Analytics script
     if (typeof window !== 'undefined' && window.gtag) {
-      // @ts-expect-error gtag is added by Google Analytics script
       window.gtag('event', 'generate_lead', {
         'currency': 'USD',
         'value': 1.0,
@@ -109,13 +104,14 @@ function ThankYouContent() {
               <p className="text-lg mb-6 text-blue-100">
                 Call us directly for immediate assistance with your project
               </p>
-              <a
-                href="tel:832-979-6414"
+              <PhoneLink
+                phone="832-979-6414"
                 className="inline-flex items-center justify-center gap-3 bg-white text-blue-700 px-8 py-5 rounded-xl text-2xl md:text-3xl font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                ariaLabel="Call us at 832-979-6414"
               >
                 <Phone className="h-8 w-8 md:h-10 md:w-10 animate-pulse" />
                 (832) 979-6414
-              </a>
+              </PhoneLink>
               <p className="mt-4 text-sm text-blue-100">
                 Available Mon-Sat: 7:00 AM - 7:00 PM
               </p>

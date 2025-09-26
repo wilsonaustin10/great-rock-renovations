@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Shield, Clock, Award, Volume2, VolumeX, Phone } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import PhoneLink from '@/components/PhoneLink';
 
 const Hero = () => {
   const [isMuted, setIsMuted] = useState(true);
@@ -76,13 +77,14 @@ const Hero = () => {
         <div className="max-w-4xl">
           {/* Prominent Phone Number - NEW */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <a
-              href="tel:832-979-6414"
+            <PhoneLink
+              phone="832-979-6414"
               className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 animate-pulse"
+              ariaLabel="Call us at 832-979-6414"
             >
               <Phone className="h-6 w-6" />
               <span className="text-xl">Call Now: (832) 979-6414</span>
-            </a>
+            </PhoneLink>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full self-center">
               <Shield className="h-4 w-4" />
               <span className="text-sm font-semibold">Licensed & Insured</span>
@@ -133,13 +135,14 @@ const Hero = () => {
               Get Your Free Quote
               <ArrowRight className="h-5 w-5 animate-bounce-horizontal" />
             </Link>
-            <a
-              href="tel:832-979-6414"
+            <PhoneLink
+              phone="832-979-6414"
               className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-bold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white  mobile-cta sm:w-auto"
+              ariaLabel="Call us at 832-979-6414"
             >
               <Phone className="h-5 w-5" />
               Call (832) 979-6414
-            </a>
+            </PhoneLink>
             <Link
               href="#portfolio"
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/20 text-white px-6 py-4 rounded-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30  mobile-cta sm:w-auto"
