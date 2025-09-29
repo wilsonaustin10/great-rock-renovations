@@ -154,7 +154,7 @@ const Hero = () => {
           {/* Quick Response Promise */}
           <div className="bg-yellow-400/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg inline-flex items-center gap-2 mb-12">
             <Clock className="h-5 w-5" />
-            <span className="font-bold">Quick Response: We answer calls within 30 minutes!</span>
+            <span className="font-bold">Quick Response</span>
           </div>
 
           {/* Trust Indicators - Enhanced Visual Hierarchy */}

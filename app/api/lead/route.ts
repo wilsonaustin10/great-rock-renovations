@@ -6,6 +6,8 @@ export async function POST(request: Request) {
     
     const { 
       name, 
+      firstName,
+      lastName,
       email, 
       phone, 
       service, 
@@ -19,7 +21,8 @@ export async function POST(request: Request) {
       utm_term
     } = body;
 
-    if (!name || !email) {
+    // Support both single 'name' field and separate firstName/lastName fields
+    if ((!name && (!firstName || !lastName)) || !email) {
       return NextResponse.json(
         { error: 'Name and email are required' },
         { status: 400 }
@@ -124,10 +127,14 @@ export async function POST(request: Request) {
       });
     }
 
+    // Use separate firstName/lastName if provided, otherwise split the name field
+    const contactFirstName = firstName || (name ? name.split(' ')[0] : '');
+    const contactLastName = lastName || (name ? name.split(' ').slice(1).join(' ') : '');
+
     const leadData = {
       locationId: ghlLocationId,
-      firstName: name.split(' ')[0],
-      lastName: name.split(' ').slice(1).join(' ') || '',
+      firstName: contactFirstName,
+      lastName: contactLastName,
       email,
       phone: phone || '',
       source: leadSource,

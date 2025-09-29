@@ -130,7 +130,7 @@ function ThankYouContent() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg text-gray-900 mb-1">
-                    Quick Response (Within 30 Minutes)
+                    Quick Response 
                   </h4>
                   <p className="text-gray-600">
                     During business hours, we&apos;ll call you within 30 minutes to discuss your project needs and schedule a consultation.

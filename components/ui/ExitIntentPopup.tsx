@@ -6,9 +6,13 @@ import { X, Gift, Clock } from 'lucide-react';
 const ExitIntentPopup = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phone, setPhone] = useState('');
   const [hasShown, setHasShown] = useState(false);
   const [consent, setConsent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
 
   useEffect(() => {
     // Check if popup has been shown in this session
@@ -32,8 +36,21 @@ const ExitIntentPopup = () => {
     };
   }, [hasShown]);
 
+  const handleNextStep = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (currentStep === 1 && email) {
+      setCurrentStep(2);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (currentStep === 1) {
+      handleNextStep(e);
+      return;
+    }
+
     if (!consent) {
       alert('Please agree to the Terms & Conditions and Privacy Policy to continue.');
       return;
@@ -48,8 +65,11 @@ const ExitIntentPopup = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: email.split('@')[0],
+          name: `${firstName} ${lastName}`,
           email: email,
+          phone: phone,
+          firstName: firstName,
+          lastName: lastName,
           source: 'exit-intent-popup',
           service: 'discount-request',
           message: 'Requested 10% discount via exit intent popup',
@@ -105,57 +125,131 @@ const ExitIntentPopup = () => {
             <p className="font-semibold">Limited Time Offer - Expires in 24 Hours</p>
           </div>
 
-          <p className="text-gray-900 text-center mb-6 font-medium">
+          <p className="text-gray-900 text-center mb-4 font-medium">
             Join thousands of Houston homeowners who trust Great Rock Renovations. 
             Enter your email below to receive your exclusive discount code!
           </p>
 
+          {/* Step Indicator */}
+          <div className="flex items-center justify-center mb-6">
+            <div className="flex items-center gap-2">
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                currentStep >= 1 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-500'
+              }`}>
+                1
+              </div>
+              <div className={`w-16 h-1 ${currentStep >= 2 ? 'bg-blue-600' : 'bg-gray-200'}`} />
+              <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold ${
+                currentStep >= 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-500'
+              }`}>
+                2
+              </div>
+            </div>
+          </div>
+
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email address"
-              required
-              className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500"
-            />
-            
-            {/* Consent Checkbox */}
-            <label className="flex items-start gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-                required
-                className="mt-1 h-4 w-4 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500"
-              />
-              <span className="text-xs text-gray-700 leading-relaxed">
-                I agree to receive promotional emails and SMS. View our{' '}
-                <a href="/privacy" target="_blank" className="text-blue-600 underline hover:text-blue-700">
-                  Privacy Policy
-                </a>{' '}
-                and{' '}
-                <a href="/terms" target="_blank" className="text-blue-600 underline hover:text-blue-700">
-                  Terms
-                </a>.
-              </span>
-            </label>
-            
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? (
-                <>
-                  <div className="inline-block animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                  Processing...
-                </>
-              ) : (
-                'Get My 10% Discount'
-              )}
-            </button>
+            {currentStep === 1 ? (
+              // Step 1: Email Collection
+              <>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500"
+                />
+                
+                <button
+                  type="submit"
+                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5"
+                >
+                  Continue to Get Discount
+                </button>
+              </>
+            ) : (
+              // Step 2: Additional Information Collection
+              <>
+                <div className="mb-4 text-sm text-gray-600 text-center">
+                  <p className="font-semibold text-gray-800 mb-1">Almost there!</p>
+                  <p>Please provide a few more details to receive your discount code.</p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <input
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    placeholder="First Name"
+                    required
+                    className="px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500"
+                  />
+                  <input
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    placeholder="Last Name"
+                    required
+                    className="px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500"
+                  />
+                </div>
+                
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Phone Number"
+                  required
+                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 text-gray-900 placeholder-gray-500"
+                />
+                
+                {/* Consent Checkbox */}
+                <label className="flex items-start gap-2 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    required
+                    className="mt-1 h-4 w-4 text-blue-600 border-2 border-gray-300 rounded focus:ring-blue-500"
+                  />
+                  <span className="text-xs text-gray-700 leading-relaxed">
+                    I agree to receive promotional emails and SMS. View our{' '}
+                    <a href="/privacy" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                      Privacy Policy
+                    </a>{' '}
+                    and{' '}
+                    <a href="/terms" target="_blank" className="text-blue-600 underline hover:text-blue-700">
+                      Terms
+                    </a>.
+                  </span>
+                </label>
+
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setCurrentStep(1)}
+                    className="flex-1 bg-gray-200 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-300 transition-all duration-300 font-semibold"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Processing...
+                      </>
+                    ) : (
+                      'Get My 10% Discount'
+                    )}
+                  </button>
+                </div>
+              </>
+            )}
           </form>
 
           {/* Trust Indicators */}
