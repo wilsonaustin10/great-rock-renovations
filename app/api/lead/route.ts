@@ -160,6 +160,55 @@ export async function POST(request: Request) {
 
       if (!ghlResponse.ok) {
         const errorText = await ghlResponse.text();
+        let errorData;
+        try {
+          errorData = JSON.parse(errorText);
+        } catch {
+          errorData = { message: errorText };
+        }
+
+        // Check if this is a duplicate contact error
+        if (ghlResponse.status === 400 && errorData.message?.includes('duplicated contacts')) {
+          console.log('Duplicate contact detected, attempting to update existing contact');
+          
+          // Extract the existing contact ID from the error response
+          const existingContactId = errorData.meta?.contactId;
+          
+          if (existingContactId) {
+            // Update the existing contact instead
+            const updateUrl = `https://services.leadconnectorhq.com/contacts/${existingContactId}`;
+            
+            // Prepare update data (remove locationId as it's not needed for updates)
+            const { locationId, ...updateData } = leadData;
+            
+            const updateResponse = await fetch(updateUrl, {
+              method: 'PUT',
+              headers: {
+                'Authorization': `Bearer ${ghlApiKey}`,
+                'Content-Type': 'application/json',
+                'Version': '2021-07-28',
+              },
+              body: JSON.stringify(updateData),
+            });
+
+            if (updateResponse.ok) {
+              await updateResponse.json();
+              console.log('Successfully updated existing contact:', existingContactId);
+              
+              return NextResponse.json({
+                success: true,
+                message: 'Contact information updated successfully',
+                contactId: existingContactId,
+                updated: true
+              });
+            } else {
+              const updateError = await updateResponse.text();
+              console.error('Failed to update existing contact:', updateError);
+            }
+          }
+        }
+
+        // Log other errors
         console.error('GHL API Error:', {
           status: ghlResponse.status,
           statusText: ghlResponse.statusText,
