@@ -191,9 +191,9 @@ export default function BrickFinishesPage() {
       </section>
 
       {/* Services Detail */}
-      <section className="py-16">
+      <section className="py-16 bg-gray-900">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
             Brick Enhancement Services
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
