@@ -15,6 +15,7 @@ const Header = () => {
       name: 'Services', 
       href: '#services',
       submenu: [
+        { name: 'Brick Finishes', href: '/brick-finishes' },
         { name: 'Deck Building', href: '/services/deck-building' },
         { name: 'Fence Installation', href: '/services/fence-installation' },
         { name: 'Kitchen Remodeling', href: '/services/kitchen-remodeling' },

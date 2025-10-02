@@ -93,7 +93,8 @@ const Hero = () => {
           
           {/* Main Heading */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            Building Dreams,{' '}
+            Houston&apos;s #1 <span className="text-yellow-400">Slurry Brick Finishes</span> &
+            <br />Building Dreams,{' '}
             <span className="text-blue-400">One Project</span> at a Time
           </h1>
           
@@ -104,6 +105,10 @@ const Hero = () => {
 
           {/* Services List */}
           <ul className="text-sm md:text-base lg:text-lg text-gray-200 mb-6 space-y-0.5 md:space-y-1 max-w-3xl">
+            <li className="flex items-start">
+              <span className="text-yellow-400 mr-2">★</span>
+              <span className="font-semibold">Brick Enhancements - Slurry, German Smear, Limewash</span>
+            </li>
             <li className="flex items-start">
               <span className="text-blue-400 mr-2">•</span>
               <span>Decks, Fences, Patios, Pergolas</span>
@@ -129,25 +134,24 @@ const Hero = () => {
           {/* CTAs - Enhanced for Better Conversion */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
-              href="#contact"
-              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500  mobile-cta sm:w-auto"
+              href="/brick-finishes"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 px-8 py-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-yellow-400 animate-pulse mobile-cta sm:w-auto"
             >
-              Get Your Free Quote
+              Brick Finishes Quote
               <ArrowRight className="h-5 w-5 animate-bounce-horizontal" />
             </Link>
-            <PhoneLink
-              phone="832-979-6414"
-              className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-bold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white  mobile-cta sm:w-auto"
-              ariaLabel="Call us at 832-979-6414"
+            <Link
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-blue-500 mobile-cta sm:w-auto"
             >
-              <Phone className="h-5 w-5" />
-              Call (832) 979-6414
-            </PhoneLink>
+              Get Your Free Quote
+              <ArrowRight className="h-5 w-5" />
+            </Link>
             <Link
               href="#portfolio"
-              className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-md border-2 border-white/20 text-white px-6 py-4 rounded-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white/30  mobile-cta sm:w-auto"
+              className="inline-flex items-center justify-center gap-2 bg-white/90 backdrop-blur-md border-2 border-white text-gray-900 px-6 py-4 rounded-lg hover:bg-white hover:scale-105 transition-all duration-300 font-bold text-base shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-white mobile-cta sm:w-auto"
             >
-              View Our Work
+              View Projects
             </Link>
           </div>
           

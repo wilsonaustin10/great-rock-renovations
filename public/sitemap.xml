@@ -10,6 +10,13 @@
   
   <!-- Service Pages - High Priority for AI Search -->
   <url>
+    <loc>https://greatrockrenovations.com/brick-finishes</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  
+  <url>
     <loc>https://greatrockrenovations.com/services/deck-building</loc>
     <lastmod>2024-12-01</lastmod>
     <changefreq>monthly</changefreq>
