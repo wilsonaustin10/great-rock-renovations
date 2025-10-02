@@ -93,7 +93,7 @@ const Hero = () => {
           
           {/* Main Heading */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            Houston&apos;s #1 <span className="text-yellow-400">Slurry Brick Finishes</span> &
+            Houston&apos;s #1 <span className="text-yellow-400">Slurry Brick Finishes</span> 
             <br />Building Dreams,{' '}
             <span className="text-blue-400">One Project</span> at a Time
           </h1>
