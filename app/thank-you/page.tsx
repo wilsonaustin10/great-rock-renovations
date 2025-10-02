@@ -17,11 +17,21 @@ function ThankYouContent() {
   useEffect(() => {
     // Google Ads Conversion Tracking
     if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-17524938335/FORM_CONVERSION_LABEL', // Replace with form submission conversion label
-        'value': 1.0,
-        'currency': 'USD'
-      });
+      // Special conversion tracking for brick finishes
+      if (service === 'brick-finishes') {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17524938335/vmemCOLezqMbEN-sxaRB',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      } else {
+        // Default conversion tracking for other services
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17524938335/FORM_CONVERSION_LABEL', // Replace with form submission conversion label
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
     }
 
     // Meta Pixel Conversion Tracking
@@ -57,6 +67,7 @@ function ThankYouContent() {
   }, [service, source, utm_source, utm_medium, utm_campaign]);
 
   const serviceLabels: Record<string, string> = {
+    'brick-finishes': 'Brick Finishes (Slurry/German Smear/Limewash)',
     'deck': 'Deck Building',
     'fence': 'Fence Installation',
     'kitchen': 'Kitchen Remodeling',

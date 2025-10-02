@@ -15,6 +15,7 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
     name: '',
     email: '',
     phone: '',
+    address: '',
     service: defaultService,
     message: '',
   });
@@ -173,6 +174,16 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
           placeholder="Phone Number (Optional)"
         />
 
+        <input
+          type="text"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          placeholder="Project Address *"
+        />
+
         <select
           name="service"
           value={formData.service}
@@ -305,6 +316,22 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
             <option value="other">Other</option>
           </select>
         </div>
+      </div>
+
+      <div>
+        <label htmlFor="address" className="block text-sm font-medium text-gray-900 mb-2">
+          Project Address *
+        </label>
+        <input
+          type="text"
+          id="address"
+          name="address"
+          value={formData.address}
+          onChange={handleChange}
+          required
+          className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
+          placeholder="123 Main Street, Houston, TX 77001"
+        />
       </div>
 
       <div>

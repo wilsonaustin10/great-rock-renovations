@@ -9,7 +9,8 @@ export async function POST(request: Request) {
       firstName,
       lastName,
       email, 
-      phone, 
+      phone,
+      address, 
       service, 
       message,
       source = 'website',
@@ -97,6 +98,14 @@ export async function POST(request: Request) {
       }
     ];
 
+    // Add address as a custom field
+    if (address) {
+      customFields.push({
+        key: 'project_address',  // Custom field for project address
+        value: address
+      });
+    }
+
     // Add project details as a custom field if you have one set up for it
     if (message) {
       customFields.push({
@@ -147,6 +156,7 @@ export async function POST(request: Request) {
       lastName: contactLastName,
       email,
       phone: phone || '',
+      address1: address || '',
       source: leadSource,
       tags: tags,
       customFields: customFields
