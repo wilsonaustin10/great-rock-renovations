@@ -156,16 +156,17 @@ export async function POST(request: Request) {
         updates: response.data.updates
       });
 
-    } catch (sheetsError: any) {
+    } catch (sheetsError) {
+      const error = sheetsError as Error & { code?: string; errors?: unknown; response?: { data?: unknown } };
       console.error('Google Sheets API Error:', {
-        message: sheetsError.message,
-        code: sheetsError.code,
-        errors: sheetsError.errors,
-        response: sheetsError.response?.data
+        message: error.message,
+        code: error.code,
+        errors: error.errors,
+        response: error.response?.data
       });
 
       // Check for common permission errors
-      if (sheetsError.code === 403 || sheetsError.message?.includes('PERMISSION_DENIED')) {
+      if (error.code === '403' || error.message?.includes('PERMISSION_DENIED')) {
         console.error('\n⚠️  IMPORTANT: The Google Sheet needs to be shared with the service account email:');
         console.error(`   Email: ${serviceAccountKey.client_email}`);
         console.error('   Please go to your Google Sheet, click "Share", and add this email with Editor permissions.\n');

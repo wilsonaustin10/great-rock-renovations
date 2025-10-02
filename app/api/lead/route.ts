@@ -67,7 +67,16 @@ export async function POST(request: Request) {
 
     // Determine lead source based on UTM parameters
     let leadSource = source;
-    if (utm_source) {
+    const tags = [service || 'general-inquiry'];
+    
+    // Add AI/LLM source tracking
+    if (source.startsWith('ai-')) {
+      tags.push('llm-referral');
+      leadSource = 'AI Search (ChatGPT/Perplexity)';
+    } else if (utm_source === 'ai-search' || utm_campaign === 'llm-referral') {
+      tags.push('llm-referral');
+      leadSource = 'AI Search (ChatGPT/Perplexity)';
+    } else if (utm_source) {
       if (utm_source.toLowerCase().includes('facebook') || utm_source.toLowerCase().includes('fb')) {
         leadSource = 'Facebook Ads';
       } else if (utm_source.toLowerCase().includes('instagram') || utm_source.toLowerCase().includes('ig')) {
@@ -138,7 +147,7 @@ export async function POST(request: Request) {
       email,
       phone: phone || '',
       source: leadSource,
-      tags: [service || 'general-inquiry'],
+      tags: tags,
       customFields: customFields
     };
 
@@ -179,7 +188,7 @@ export async function POST(request: Request) {
             const updateUrl = `https://services.leadconnectorhq.com/contacts/${existingContactId}`;
             
             // Prepare update data (remove locationId as it's not needed for updates)
-            const { locationId, ...updateData } = leadData;
+            const { locationId: _, ...updateData } = leadData;
             
             const updateResponse = await fetch(updateUrl, {
               method: 'PUT',

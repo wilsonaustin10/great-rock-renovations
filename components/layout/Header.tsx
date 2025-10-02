@@ -11,11 +11,18 @@ const Header = () => {
 
   const navigation = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { 
+      name: 'Services', 
+      href: '#services',
+      submenu: [
+        { name: 'Deck Building', href: '/services/deck-building' },
+        { name: 'Fence Installation', href: '/services/fence-installation' },
+        { name: 'Kitchen Remodeling', href: '/services/kitchen-remodeling' },
+      ]
+    },
+    { name: 'Projects', href: '/projects' },
+    { name: 'About', href: '/#about' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
