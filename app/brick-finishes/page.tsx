@@ -138,6 +138,10 @@ export default function BrickFinishesPage() {
                 Get Free Quote
                 <ArrowRight className="h-5 w-5" />
               </Link>
+              <Link href="#our-brick-finishing-projects" className="inline-flex items-center justify-center gap-2 bg-white text-gray-900 border-2 border-gray-300 px-8 py-4 rounded-lg hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5">
+                View Our Work
+                <ArrowRight className="h-5 w-5" />
+              </Link>
               <PhoneLink
                 phone="832-979-6414"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5"
@@ -167,8 +171,31 @@ export default function BrickFinishesPage() {
         </div>
       </section>
 
+      {/* Quick Navigation */}
+      <section className="sticky top-16 z-40 bg-white border-b border-gray-200 shadow-sm">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 py-4">
+            <a href="#our-brick-finishing-projects" className="px-4 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
+              Our Projects
+            </a>
+            <a href="#brick-enhancement-services" className="px-4 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
+              Services
+            </a>
+            <a href="#our-process" className="px-4 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
+              Our Process
+            </a>
+            <a href="#service-areas" className="px-4 py-2 text-sm sm:text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200">
+              Service Areas
+            </a>
+            <a href="#quote-form" className="px-4 py-2 text-sm sm:text-base font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-200">
+              Get Free Quote
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* Project Gallery */}
-      <section className="py-16 bg-gray-50">
+      <section id="our-brick-finishing-projects" className="py-16 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
             Our Brick Finishing Projects
@@ -196,7 +223,7 @@ export default function BrickFinishesPage() {
       </section>
 
       {/* Services Detail */}
-      <section className="py-16 bg-gray-900">
+      <section id="brick-enhancement-services" className="py-16 bg-gray-900 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-12">
             Brick Enhancement Services
@@ -221,7 +248,7 @@ export default function BrickFinishesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      <section id="our-process" className="py-16 bg-gray-50 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
             Our Process
@@ -241,7 +268,7 @@ export default function BrickFinishesPage() {
       </section>
 
       {/* Service Areas */}
-      <section className="py-16">
+      <section id="service-areas" className="py-16 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
             Serving Greater Houston
@@ -265,7 +292,7 @@ export default function BrickFinishesPage() {
       </section>
 
       {/* Lead Form Section */}
-      <section id="quote-form" className="py-16 bg-gradient-to-b from-blue-50 to-white">
+      <section id="quote-form" className="py-16 bg-gradient-to-b from-blue-50 to-white scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-6">
