@@ -82,6 +82,11 @@ export default function BrickFinishesPage() {
       src: "/images/Brick Finishes/6e5dca1c-969d-466a-8a63-c63b88a2cc55.JPG",
       alt: "Beautiful limewash brick finish with subtle texture",
       title: "Limewash Application"
+    },
+    {
+      src: "/images/Brick Finishes/D8CDC4E1-A808-45AA-8316-B6749273269A.jpeg",
+      alt: "Professional brick finish transformation by Great Rock Renovations",
+      title: "Brick Transformation"
     }
   ];
 
@@ -168,7 +173,7 @@ export default function BrickFinishesPage() {
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 text-center mb-12">
             Our Brick Finishing Projects
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projectImages.map((image, index) => (
               <div key={index} className="group relative overflow-hidden rounded-lg shadow-xl">
                 <div className="aspect-w-4 aspect-h-3 relative h-80">
