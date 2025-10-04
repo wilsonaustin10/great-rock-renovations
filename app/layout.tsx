@@ -7,6 +7,7 @@ import FloatingCTA from "@/components/ui/FloatingCTA";
 import ExitIntentPopup from "@/components/ui/ExitIntentPopup";
 import FloatingCallButton from "@/components/FloatingCallButton";
 import GTMLoader from "@/components/GTMLoader";
+import AnalyticsMonitor from "@/components/AnalyticsMonitor";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -190,6 +191,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         <GTMLoader />
+        <AnalyticsMonitor />
         <Header />
         <main>{children}</main>
         <Footer />
