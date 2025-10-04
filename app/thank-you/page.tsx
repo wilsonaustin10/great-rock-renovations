@@ -18,7 +18,7 @@ function ThankYouContent() {
     // Google Ads Conversion Tracking
     if (typeof window !== 'undefined' && window.gtag) {
       // Special conversion tracking for brick finishes
-      if (service === 'brick-finishes') {
+      if (service === 'brick-finishes' || service === 'german-smear') {
         window.gtag('event', 'conversion', {
           'send_to': 'AW-17524938335/vmemCOLezqMbEN-sxaRB',
           'value': 1.0,
@@ -67,6 +67,7 @@ function ThankYouContent() {
   }, [service, source, utm_source, utm_medium, utm_campaign]);
 
   const serviceLabels: Record<string, string> = {
+    'german-smear': 'German Smear & Brick Finishes',
     'brick-finishes': 'Brick Finishes (Slurry/German Smear/Limewash)',
     'deck': 'Deck Building',
     'fence': 'Fence Installation',

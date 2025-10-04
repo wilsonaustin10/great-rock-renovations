@@ -93,7 +93,7 @@ const Hero = () => {
           
           {/* Main Heading */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
-            Houston&apos;s #1 <span className="text-yellow-400">Slurry Brick Finishes</span> 
+            Houston&apos;s #1 <span className="text-yellow-400">German Smear Finishes</span> 
             <br />Building Dreams,{' '}
             <span className="text-blue-400">One Project</span> at a Time
           </h1>
@@ -134,7 +134,7 @@ const Hero = () => {
           {/* CTAs - Enhanced for Better Conversion */}
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Link
-              href="/brick-finishes"
+              href="/german-smear"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-yellow-500 to-yellow-600 text-gray-900 px-8 py-4 rounded-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-yellow-400 animate-pulse mobile-cta sm:w-auto"
             >
               Brick Finishes Quote

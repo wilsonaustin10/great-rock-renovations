@@ -54,6 +54,7 @@ export async function POST(request: Request) {
 
     // Format service name for display
     const serviceLabels: Record<string, string> = {
+      'german-smear': 'German Smear & Brick Finishes',
       'brick-finishes': 'Brick Finishes',
       'deck': 'Deck Building',
       'fence': 'Fence Installation',

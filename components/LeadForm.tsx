@@ -191,7 +191,8 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
           <option value="">Select a service</option>
-          <option value="brick-finishes">Brick Finishes (Slurry/German Smear/Limewash)</option>
+          <option value="german-smear">German Smear & Brick Finishes</option>
+          <option value="brick-finishes">Brick Finishes (Legacy)</option>
           <option value="deck">Deck Building</option>
           <option value="fence">Fence Installation</option>
           <option value="kitchen">Kitchen Remodeling</option>
@@ -306,7 +307,8 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
           >
             <option value="">Select a service</option>
-            <option value="brick-finishes">Brick Finishes (Slurry/German Smear/Limewash)</option>
+            <option value="german-smear">German Smear & Brick Finishes</option>
+          <option value="brick-finishes">Brick Finishes (Legacy)</option>
             <option value="deck">Deck Building</option>
             <option value="fence">Fence Installation</option>
             <option value="kitchen">Kitchen Remodeling</option>

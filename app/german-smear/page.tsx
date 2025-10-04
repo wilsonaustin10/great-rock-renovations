@@ -6,19 +6,19 @@ import PhoneLink from '@/components/PhoneLink';
 import { MapPin, Clock, Shield, Award, CheckCircle, Phone, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Houston&apos;s #1 Slurry Brick Finishes | German Smear & Limewash | Great Rock Renovations",
+  title: "Houston&apos;s #1 German Smear Finishes | German Smear & Limewash | Great Rock Renovations",
   description: "Transform your Houston home with expert slurry brick finishes, German smear, and limewash applications. Professional brick enhancement services with stunning results. Free quotes & consultations.",
   keywords: "slurry brick Houston, German smear Houston, limewash brick Houston, brick finishes Houston TX, brick enhancement, mortar wash, brick makeover Houston, exterior brick renovation",
   openGraph: {
-    title: "Houston&apos;s #1 Slurry Brick Finishes | Great Rock Renovations",
+    title: "Houston&apos;s #1 German Smear Finishes | Great Rock Renovations",
     description: "Expert slurry brick, German smear & limewash applications in Houston. Transform your home's exterior with our professional brick finishing services.",
-    url: "https://greatrockrenovations.com/brick-finishes",
+    url: "https://greatrockrenovations.com/german-smear",
     images: [
       {
         url: "/images/Brick Finishes/087c9f75-c8a1-4259-98ea-2db160bd27f3.JPG",
         width: 1200,
         height: 630,
-        alt: "Professional Slurry Brick Finish by Great Rock Renovations",
+        alt: "Professional German Smear Finish by Great Rock Renovations",
       },
     ],
   },
@@ -45,7 +45,7 @@ const structuredData = {
     "Bellaire", "West University", "Heights", "Montrose"
   ],
   "description": "Professional brick finishing services including slurry brick, German smear, and limewash applications in Houston, TX",
-  "serviceType": ["Slurry Brick", "German Smear", "Limewash", "Brick Enhancement"],
+  "serviceType": ["German Smear", "Slurry Brick", "Limewash", "Brick Enhancement"],
 };
 
 export default function BrickFinishesPage() {
@@ -125,7 +125,7 @@ export default function BrickFinishesPage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6">
-              Houston&apos;s #1 Slurry Brick Finishes
+              Houston&apos;s #1 German Smear Finishes
             </h1>
             <p className="text-xl lg:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
               Transform your home&apos;s exterior with professional slurry brick, German smear, or limewash applications. 
@@ -303,8 +303,8 @@ export default function BrickFinishesPage() {
             </p>
             <div className="bg-white rounded-lg shadow-xl p-8">
               <LeadForm 
-                source="brick-finishes-page" 
-                service="brick-finishes"
+                source="german-smear-page" 
+                service="german-smear"
               />
             </div>
           </div>
