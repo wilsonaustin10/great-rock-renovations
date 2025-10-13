@@ -27,16 +27,16 @@ export default function FloatingCallButton() {
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
       {/* Call Now Button */}
       <PhoneLink
-        phone="832-979-6414"
+        phone="713-805-6559"
         className="group flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-4 py-3 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-110"
-        ariaLabel="Call us at 832-979-6414"
+        ariaLabel="Call us at 713-805-6559"
       >
         <div className="relative">
           <div className="absolute inset-0 bg-white rounded-full animate-ping opacity-25"></div>
           <Phone className="relative h-6 w-6" />
         </div>
         <span className="font-bold text-base whitespace-nowrap">
-          (832) 979-6414
+          (713) 805-6559
         </span>
       </PhoneLink>
       

@@ -78,12 +78,12 @@ const Hero = () => {
           {/* Prominent Phone Number - NEW */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <PhoneLink
-              phone="832-979-6414"
+              phone="713-805-6559"
               className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 animate-pulse"
-              ariaLabel="Call us at 832-979-6414"
+              ariaLabel="Call us at 713-805-6559"
             >
               <Phone className="h-6 w-6" />
-              <span className="text-xl">Call Now: (832) 979-6414</span>
+              <span className="text-xl">Call Now: (713) 805-6559</span>
             </PhoneLink>
             <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/20 px-4 py-2 rounded-full self-center">
               <Shield className="h-4 w-4" />

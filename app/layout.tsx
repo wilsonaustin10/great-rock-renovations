@@ -57,7 +57,7 @@ const structuredData = {
       "name": "Great Rock Renovations",
       "description": "Professional construction and renovation services in Houston, TX. Licensed, insured, and trusted by homeowners. Free quotes within 24 hours.",
       "url": "https://greatrockrenovations.com",
-      "telephone": "+18329796414",
+      "telephone": "+17138056559",
       "email": "info@greatrockrenovations.com",
       "address": {
         "@type": "PostalAddress",

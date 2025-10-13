@@ -53,7 +53,7 @@ export default function TermsConditions() {
               <li>Carriers are not liable for delayed or undelivered messages</li>
             </ul>
             <p>
-              For support, contact us at (832) 979-6414 or info@greatrockrenovations.com
+              For support, contact us at (713) 805-6559 or info@greatrockrenovations.com
             </p>
           </section>
 
@@ -177,7 +177,7 @@ export default function TermsConditions() {
               <p className="font-semibold">Great Rock Renovations</p>
               <p>15219 Cypress Post Ln</p>
               <p>Cypress, TX 77429</p>
-              <p>Phone: (832) 979-6414</p>
+              <p>Phone: (713) 805-6559</p>
               <p>Email: info@greatrockrenovations.com</p>
               <p>Website: www.greatrockrenovations.com</p>
             </div>

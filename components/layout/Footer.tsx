@@ -109,11 +109,11 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3">
               <a
-                href="tel:832-979-6414"
+                href="tel:713-805-6559"
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                <span>(832) 979-6414</span>
+                <span>(713) 805-6559</span>
               </a>
               <a
                 href="mailto:info@greatrockrenovations.com"

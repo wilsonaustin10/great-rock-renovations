@@ -57,12 +57,12 @@ const Header = () => {
                 </Link>
               ))}
               <PhoneLink
-                phone="832-979-6414"
+                phone="713-805-6559"
                 className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-5 py-2.5 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 focus:outline-none focus:ring-4 focus:ring-green-500 animate-pulse"
-                ariaLabel="Call us at 832-979-6414"
+                ariaLabel="Call us at 713-805-6559"
               >
                 <Phone className="h-5 w-5" />
-                <span className="font-bold text-lg">(832) 979-6414</span>
+                <span className="font-bold text-lg">(713) 805-6559</span>
               </PhoneLink>
             </div>
           </div>
@@ -70,9 +70,9 @@ const Header = () => {
           {/* Mobile Phone & Menu */}
           <div className="lg:hidden flex items-center gap-2">
             <PhoneLink
-              phone="832-979-6414"
+              phone="713-805-6559"
               className="flex items-center gap-1 bg-gradient-to-r from-green-500 to-green-600 text-white px-3 py-2 rounded-lg shadow-lg animate-pulse"
-              ariaLabel="Call us at 832-979-6414"
+              ariaLabel="Call us at 713-805-6559"
             >
               <Phone className="h-4 w-4" />
               <span className="font-bold text-sm">Call</span>
@@ -107,12 +107,12 @@ const Header = () => {
               ))}
               <div onClick={() => setIsMobileMenuOpen(false)}>
                 <PhoneLink
-                  phone="832-979-6414"
+                  phone="713-805-6559"
                   className="flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-base font-bold bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transition-all duration-300 shadow-lg mx-2 mt-2 animate-pulse"
-                  ariaLabel="Call us at 832-979-6414"
+                  ariaLabel="Call us at 713-805-6559"
                 >
                   <Phone className="h-5 w-5" />
-                  <span className="text-lg">Call (832) 979-6414</span>
+                  <span className="text-lg">Call (713) 805-6559</span>
                 </PhoneLink>
               </div>
             </div>

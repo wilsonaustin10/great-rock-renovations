@@ -5,7 +5,7 @@ import { CheckCircle, Clock, Shield, Award, Home } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Fence Installation Houston TX | Wood, Vinyl & Chain Link | Great Rock Renovations", 
-  description: "Professional fence installation in Houston, TX. Wood, vinyl, chain link, and aluminum fences installed in 3-7 days. Licensed, insured, free quotes. Call (832) 979-6414.",
+  description: "Professional fence installation in Houston, TX. Wood, vinyl, chain link, and aluminum fences installed in 3-7 days. Licensed, insured, free quotes. Call (713) 805-6559.",
   keywords: "fence installation Houston, wood fence Houston TX, vinyl fencing, chain link fence, fence contractor Houston, privacy fence installation",
 };
 
@@ -16,7 +16,7 @@ const structuredData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Great Rock Renovations",
-    "telephone": "+18329796414",
+    "telephone": "+17138056559",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Houston",
@@ -101,7 +101,7 @@ export default function FenceInstallationPage() {
                   <p>✓ Wood, vinyl, chain link & aluminum options</p>
                   <p>✓ Typical installation completed in 3-7 days</p>
                   <p>✓ Licensed, insured & permit assistance included</p>
-                  <p className="text-green-600 font-bold">Call (832) 979-6414 for immediate service</p>
+                  <p className="text-green-600 font-bold">Call (713) 805-6559 for immediate service</p>
                 </div>
               </div>
 
@@ -366,10 +366,10 @@ export default function FenceInstallationPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:832-979-6414"
+                href="tel:713-805-6559"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-green-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                Call (832) 979-6414
+                Call (713) 805-6559
               </a>
               <Link
                 href="/#contact"

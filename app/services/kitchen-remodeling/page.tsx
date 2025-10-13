@@ -5,7 +5,7 @@ import { CheckCircle, Clock, Shield, Award, DollarSign } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Kitchen Remodeling Houston TX | Complete Kitchen Renovation | Great Rock",
-  description: "Professional kitchen remodeling in Houston, TX. Complete renovations from $15,000-$60,000. 4-8 week timeline. Licensed, insured, free design consultation. Call (832) 979-6414.",
+  description: "Professional kitchen remodeling in Houston, TX. Complete renovations from $15,000-$60,000. 4-8 week timeline. Licensed, insured, free design consultation. Call (713) 805-6559.",
   keywords: "kitchen remodeling Houston, kitchen renovation Houston TX, kitchen cabinets, countertops, kitchen contractor Houston",
 };
 
@@ -16,7 +16,7 @@ const structuredData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Great Rock Renovations",
-    "telephone": "+18329796414",
+    "telephone": "+17138056559",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Houston",
@@ -101,7 +101,7 @@ export default function KitchenRemodelingPage() {
                   <p>✓ $15,000-$60,000 typical investment range</p>
                   <p>✓ 4-8 week completion timeline</p>
                   <p>✓ Licensed, insured, permits included</p>
-                  <p className="text-amber-600 font-bold">Call (832) 979-6414 for free design consultation</p>
+                  <p className="text-amber-600 font-bold">Call (713) 805-6559 for free design consultation</p>
                 </div>
               </div>
 
@@ -359,10 +359,10 @@ export default function KitchenRemodelingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:832-979-6414"
+                href="tel:713-805-6559"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                Call (832) 979-6414
+                Call (713) 805-6559
               </a>
               <Link
                 href="/#contact"

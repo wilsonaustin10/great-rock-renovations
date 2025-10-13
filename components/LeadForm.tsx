@@ -131,11 +131,11 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
         });
         window.location.href = `/thank-you?${params.toString()}`;
       } else {
-        alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+        alert('There was an issue submitting your request. Please try again or call us directly at (713) 805-6559.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+      alert('There was an issue submitting your request. Please try again or call us directly at (713) 805-6559.');
     } finally {
       setIsSubmitting(false);
     }
@@ -292,7 +292,7 @@ const LeadForm = ({ source = 'website', service: defaultService = '', compact = 
             value={formData.phone}
             onChange={handleChange}
             className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
-            placeholder="(832) 979-6414"
+            placeholder="(713) 805-6559"
           />
         </div>
         <div>

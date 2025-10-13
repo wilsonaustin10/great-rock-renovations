@@ -125,7 +125,7 @@ export default function PrivacyPolicy() {
               <p className="font-semibold">Great Rock Renovations</p>
               <p>15219 Cypress Post Ln</p>
               <p>Cypress, TX 77429</p>
-              <p>Phone: (832) 979-6414</p>
+              <p>Phone: (713) 805-6559</p>
               <p>Email: info@greatrockrenovations.com</p>
             </div>
           </section>

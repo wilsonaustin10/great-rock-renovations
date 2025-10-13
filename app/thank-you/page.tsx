@@ -117,12 +117,12 @@ function ThankYouContent() {
                 Call us directly for immediate assistance with your project
               </p>
               <PhoneLink
-                phone="832-979-6414"
+                phone="713-805-6559"
                 className="inline-flex items-center justify-center gap-3 bg-white text-blue-700 px-8 py-5 rounded-xl text-2xl md:text-3xl font-bold hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg"
-                ariaLabel="Call us at 832-979-6414"
+                ariaLabel="Call us at 713-805-6559"
               >
                 <Phone className="h-8 w-8 md:h-10 md:w-10 animate-pulse" />
-                (832) 979-6414
+                (713) 805-6559
               </PhoneLink>
               <p className="mt-4 text-sm text-blue-100">
                 Available Mon-Sat: 7:00 AM - 7:00 PM

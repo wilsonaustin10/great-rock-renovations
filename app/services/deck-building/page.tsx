@@ -4,7 +4,7 @@ import { CheckCircle, Clock, Shield, Award, Ruler } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Deck Building Services Houston TX | Custom Decks by Great Rock Renovations",
-  description: "Professional deck building in Houston, TX. Custom wood and composite decks installed in 2-4 weeks. Licensed, insured, free quotes within 24 hours. Call (832) 979-6414.",
+  description: "Professional deck building in Houston, TX. Custom wood and composite decks installed in 2-4 weeks. Licensed, insured, free quotes within 24 hours. Call (713) 805-6559.",
   keywords: "deck building Houston, custom decks Houston TX, composite decking, wood deck installation, deck contractor Houston",
 };
 
@@ -15,7 +15,7 @@ const structuredData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Great Rock Renovations",
-    "telephone": "+18329796414",
+    "telephone": "+17138056559",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Houston",
@@ -100,7 +100,7 @@ export default function DeckBuildingPage() {
                   <p>✓ Typical jobs completed in 2-4 weeks</p>
                   <p>✓ Licensed & insured with permit assistance included</p>
                   <p>✓ Free quotes within 24 hours</p>
-                  <p className="text-blue-600 font-bold">Call (832) 979-6414 for immediate service</p>
+                  <p className="text-blue-600 font-bold">Call (713) 805-6559 for immediate service</p>
                 </div>
               </div>
 
@@ -309,10 +309,10 @@ export default function DeckBuildingPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:832-979-6414"
+                href="tel:713-805-6559"
                 className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors"
               >
-                Call (832) 979-6414
+                Call (713) 805-6559
               </a>
               <a
                 href="#contact"

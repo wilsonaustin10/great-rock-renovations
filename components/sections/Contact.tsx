@@ -88,11 +88,11 @@ const Contact = () => {
         });
         window.location.href = `/thank-you?${params.toString()}`;
       } else {
-        alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+        alert('There was an issue submitting your request. Please try again or call us directly at (713) 805-6559.');
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      alert('There was an issue submitting your request. Please try again or call us directly at (832) 979-6414.');
+      alert('There was an issue submitting your request. Please try again or call us directly at (713) 805-6559.');
     } finally {
       setIsSubmitting(false);
     }
@@ -169,7 +169,7 @@ const Contact = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-4 focus:ring-blue-500  focus:border-blue-500 transition-all duration-200 hover:border-gray-300 text-gray-900"
-                    placeholder="(832) 979-6414"
+                    placeholder="(713) 805-6559"
                   />
                 </div>
                 <div>
@@ -269,7 +269,7 @@ const Contact = () => {
 
             <div className="space-y-6">
               <a
-                href="tel:832-979-6414"
+                href="tel:713-805-6559"
                 className="flex items-start gap-4 group"
               >
                 <div className="bg-blue-100 p-3 rounded-lg group-hover:bg-blue-200 transition-colors">
@@ -277,7 +277,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-blue-600">(832) 979-6414</p>
+                  <p className="text-blue-600">(713) 805-6559</p>
                   <p className="text-sm text-gray-800">Mon-Fri 8am-6pm</p>
                 </div>
               </a>

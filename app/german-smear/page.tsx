@@ -31,7 +31,7 @@ const structuredData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Great Rock Renovations",
-    "telephone": "+18329796414",
+    "telephone": "+17138056559",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Houston",
@@ -143,12 +143,12 @@ export default function BrickFinishesPage() {
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <PhoneLink
-                phone="832-979-6414"
+                phone="713-805-6559"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 font-bold text-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-0.5"
                 ariaLabel="Call for brick finishing services"
               >
                 <Phone className="h-5 w-5" />
-                Call (832) 979-6414
+                Call (713) 805-6559
               </PhoneLink>
             </div>
 
@@ -326,12 +326,12 @@ export default function BrickFinishesPage() {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <PhoneLink
-              phone="832-979-6414"
+              phone="713-805-6559"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-8 py-4 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 font-bold text-lg shadow-xl"
               ariaLabel="Call for immediate assistance"
             >
               <Phone className="h-5 w-5" />
-              Call Now: (832) 979-6414
+              Call Now: (713) 805-6559
             </PhoneLink>
           </div>
         </div>

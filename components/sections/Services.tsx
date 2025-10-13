@@ -145,11 +145,11 @@ const Services = () => {
               <ArrowRight className="h-5 w-5" />
             </Link>
             <a
-              href="tel:832-979-6414"
+              href="tel:713-805-6559"
               className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-gray-50 transition-all duration-300 font-bold text-lg border-2 border-blue-200 hover:border-blue-300 focus:outline-none focus:ring-4 focus:ring-blue-500 "
             >
               <Phone className="h-5 w-5" />
-              Call (832) 979-6414
+              Call (713) 805-6559
             </a>
           </div>
           <p className="text-sm text-gray-900 mt-6">

@@ -5,7 +5,7 @@ import { MapPin, Calendar, DollarSign, Ruler, CheckCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Houston Construction Projects | Portfolio | Great Rock Renovations",
-  description: "View our completed construction projects in Houston, TX. Real examples of deck building, fence installation, kitchen remodeling with timelines and costs. Call (832) 979-6414.",
+  description: "View our completed construction projects in Houston, TX. Real examples of deck building, fence installation, kitchen remodeling with timelines and costs. Call (713) 805-6559.",
   keywords: "Houston construction projects, renovation portfolio, deck examples, fence projects, kitchen remodel before after",
 };
 
@@ -17,7 +17,7 @@ const structuredData = {
   "provider": {
     "@type": "LocalBusiness",
     "name": "Great Rock Renovations",
-    "telephone": "+18329796414"
+    "telephone": "+17138056559"
   },
   "mainEntity": {
     "@type": "ItemList",
